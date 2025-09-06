@@ -1,0 +1,1730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Admasu Abebe | Professional Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <style>
+        :root {
+            --color-primary: #0A2342;
+            --color-accent: #FFB81C;
+            --color-bg: #F8F9FA;
+            --color-text: #212529;
+            --color-teal: #007C91;
+            --radius-lg: 1rem;
+            --radius-md: 0.5rem;
+            --container-width: 1100px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--color-primary);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+
+        header.shrink {
+            padding: 0.5rem 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 0;
+        }
+
+         .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: white;
+            text-decoration: none;
+            border-radius: 50%;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--color-accent);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        nav a:hover {
+            color: var(--color-accent);
+        }
+
+
+         /* Creative Hero Section */
+        .creative-hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--color-primary) 0%, #1a3c66 100%);
+            padding: 2rem 0;
+        }
+
+        .creative-hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;              
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 3;
+        }
+
+        /* Photo design with 3D effect */
+        .creative-hero-image {
+            position: relative;
+            perspective: 1000px;
+            transform-style: preserve-3d;
+        }
+
+        .creative-headshot {
+            width: 100%;
+            border-radius: var(--radius-lg);
+            box-shadow: 0 25px 50px rgba(10, 35, 66, 0.25);
+            transition: all 0.5s ease;
+            transform: translateZ(20px);
+            position: relative;
+            z-index: 2;
+        }
+
+        .creative-photo-frame {
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: 20px;
+            bottom: 20px;
+            border: 4px solid var(--color-accent);
+            border-radius: var(--radius-lg);
+            z-index: 1;
+            transform: translateZ(10px);
+            transition: all 0.5s ease;
+        }
+
+        .creative-photo-decoration {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: 3px solid var(--color-teal);
+            border-radius: 50%;
+            bottom: -30px;
+            right: -30px;
+            z-index: 3;
+            animation: creative-float 6s ease-in-out infinite;
+        }
+
+        .creative-photo-decoration::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            border: 2px solid var(--color-accent);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Content styling */
+        .creative-hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .creative-hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .creative-hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* 3D animated elements */
+        .creative-floating-element {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 184, 28, 0.15);
+            animation: creative-float 10s infinite ease-in-out;
+            z-index: 1;
+        }
+
+        .creative-floating-element:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .creative-floating-element:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            top: 60%;
+            left: 5%;
+            animation-delay: 2s;
+        }
+
+        .creative-floating-element:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            top: 30%;
+            right: 10%;
+            animation-delay: 4s;
+        }
+
+        .creative-floating-element:nth-child(4) {
+            width: 100px;
+            height: 100px;
+            top: 70%;
+            right: 5%;
+            animation-delay: 6s;
+        }
+
+        /* Buttons */
+        .creative-btn {
+            padding: 0.8rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .creative-btn-primary {
+            background-color: var(--color-accent);
+            color: var(--color-primary);
+            border: none;
+        }
+
+        .creative-btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 184, 28, 0.3);
+        }
+
+        .creative-btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--color-teal);
+            color: var(--color-teal);
+        }
+
+        .creative-btn-outline:hover {
+            background-color: var(--color-teal);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Animations */
+        @keyframes creative-float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(10deg);
+            }
+        }
+
+        /* Text animation */
+        .creative-typewriter {
+            overflow: hidden;
+            border-right: 0.15em solid var(--color-accent);
+            white-space: nowrap;
+            margin: 0 auto;
+            animation: creative-typing 3.5s steps(40, end), creative-blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes creative-typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes creative-blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--color-accent) }
+        }
+
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-radius: var(--radius-md);
+            padding: 1rem;
+            display: none;
+            z-index: 1;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .dropdown-content a {
+            color: var(--color-primary);
+            display: block;
+            padding: 0.5rem 0;
+            transition: all 0.2s ease;
+        }
+
+        .dropdown-content a:hover {
+            color: var(--color-teal);
+            padding-left: 5px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.6rem 1.2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: var(--color-accent);
+            color: var(--color-primary);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(255, 184, 28, 0.3);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--color-teal);
+            color: var(--color-teal);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--color-teal);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+        /* Slideshow Section */
+        .slideshow-section {
+            padding: 4rem 0;
+            background-color: var(--color-primary);
+            color: white;
+        }
+
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .mySlides {
+            display: none;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .mySlides.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .mySlides img {
+            width: 100%;
+            vertical-align: middle;
+            height: 500px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .mySlides:hover img {
+            transform: scale(1.05);
+        }
+
+        .slide-content {
+            position: absolute;
+            bottom: 0;
+            background: rgba(10, 35, 66, 0.8);
+            color: #f1f1f1;
+            width: 100%;
+            padding: 2rem;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.5s ease 0.3s;
+        }
+
+        .mySlides.active .slide-content {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .slide-content h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .slide-content p {
+            font-size: 1.1rem;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 1rem;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 10;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+            transform: scale(1.1);
+        }
+
+        .dots-container {
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease, transform 0.3s ease;
+        }
+
+        .active-dot, .dot:hover {
+            background-color: var(--color-accent);
+            transform: scale(1.2);
+        }
+
+        /* About Section */
+        .section {
+            padding: 5rem 0;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.5s ease;
+        }
+
+        .section.visible .section-title::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .section.visible .about-content p {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section.visible .about-content p:nth-child(1) { transition-delay: 0.1s; }
+        .section.visible .about-content p:nth-child(2) { transition-delay: 0.2s; }
+        .section.visible .about-content p:nth-child(3) { transition-delay: 0.3s; }
+
+        .skills-card {
+            background-color: white;
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: 0 6px 20px rgba(10, 35, 66, 0.08);
+            transform: perspective(1000px) rotateX(5deg);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .skills-card:hover {
+            transform: perspective(1000px) rotateX(0);
+            box-shadow: 0 10px 30px rgba(10, 35, 66, 0.15);
+        }
+
+        .skills-card h3 {
+            color: var(--color-primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .skill-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 1.2rem;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .section.visible .skill-item {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .section.visible .skill-item:nth-child(1) { transition-delay: 0.1s; }
+        .section.visible .skill-item:nth-child(2) { transition-delay: 0.2s; }
+        .section.visible .skill-item:nth-child(3) { transition-delay: 0.3s; }
+        .section.visible .skill-item:nth-child(4) { transition-delay: 0.4s; }
+
+        .skill-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--color-teal);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .skill-item:hover .skill-icon {
+            transform: scale(1.1) rotate(5deg);
+            background-color: var(--color-accent);
+        }
+
+        /* Explore Cards */
+        .explore-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .explore-card {
+            background-color: white;
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: 0 6px 20px rgba(10, 35, 66, 0.08);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .explore-card.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .explore-card:hover {
+            transform: translateY(-5px) rotate(1deg);
+            box-shadow: 0 12px 30px rgba(10, 35, 66, 0.12);
+        }
+
+        .explore-card i {
+            font-size: 2rem;
+            color: var(--color-teal);
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .explore-card:hover i {
+            transform: scale(1.2);
+            color: var(--color-accent);
+        }
+
+        .explore-card h3 {
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+
+        .explore-card p {
+            margin-bottom: 1.5rem;
+            color: var(--color-text);
+        }
+
+        .card-link {
+            display: flex;
+            align-items: center;
+            color: var(--color-accent);
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .explore-card:hover .card-link {
+            transform: translateX(5px);
+        }
+
+        /* Publications */
+        .publications-container {
+            background-color: white;
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: 0 6px 20px rgba(10, 35, 66, 0.08);
+        }
+
+        .publication-filters {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            background-color: var(--color-bg);
+            border: none;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active {
+            background-color: var(--color-primary);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .filter-btn:hover:not(.active) {
+            background-color: #e9ecef;
+        }
+
+        .publication-item {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #eee;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .publication-item.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .publication-item:last-child {
+            border-bottom: none;
+        }
+
+        .publication-authors {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .publication-title {
+            font-size: 1.2rem;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+            text-decoration: none;
+            display: block;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .publication-title:hover {
+            color: var(--color-teal);
+        }
+
+        .publication-venue {
+            margin-bottom: 0.5rem;
+            font-style: italic;
+        }
+
+        .publication-badges {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .badge {
+            padding: 0.3rem 0.6rem;
+            background-color: var(--color-bg);
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: transform 0.3s ease;
+        }
+
+        .badge:hover {
+            transform: translateY(-2px);
+        }
+
+        .badge-doi {
+            background-color: var(--color-primary);
+            color: white;
+        }
+
+        .badge-pdf {
+            background-color: var(--color-teal);
+            color: white;
+        }
+
+        /* Projects Carousel */
+        .projects-carousel {
+            position: relative;
+            margin: 2rem 0;
+        }
+
+        .project-cards {
+            display: flex;
+            gap: 2rem;
+            overflow-x: auto;
+            padding: 1rem 0.5rem;
+            scrollbar-width: none;
+            scroll-behavior: smooth;
+        }
+
+        .project-cards::-webkit-scrollbar {
+            display: none;
+        }
+
+        .project-card {
+            min-width: 300px;
+            background-color: white;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(10, 35, 66, 0.08);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            opacity: 0;
+            transform: translateX(50px);
+        }
+
+        .project-card.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px) rotate(1deg);
+            box-shadow: 0 15px 35px rgba(10, 35, 66, 0.15);
+        }
+
+        .project-image {
+            height: 180px;
+            background-color: #ddd;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-stats {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .stat {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 0.9rem;
+        }
+
+        /* Carousel navigation */
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .carousel-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--color-primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-btn:hover {
+            background-color: var(--color-teal);
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .footer-links.animate li {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--color-accent);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.2s;
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        .social-links.animate a {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .social-links a:nth-child(1) { transition-delay: 0.1s; }
+        .social-links a:nth-child(2) { transition-delay: 0.2s; }
+        .social-links a:nth-child(3) { transition-delay: 0.3s; }
+        .social-links a:nth-child(4) { transition-delay: 0.4s; }
+
+        .social-links a:hover {
+            background-color: var(--color-accent);
+            color: var(--color-primary);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background-color: var(--color-primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 99;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--color-teal);
+            transform: translateY(-5px);
+        }
+
+        /* Particle animation background for hero */
+        .particles-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(255, 184, 28, 0.3);
+            animation: float 15s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-1000px) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* Text animation */
+        .typewriter {
+            overflow: hidden;
+            border-right: 0.15em solid var(--color-accent);
+            white-space: nowrap;
+            margin: 0 auto;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--color-accent) }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .hero-container,
+            .about-container {
+                gap: 2rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 1rem 0;
+            }
+            
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--color-primary);
+                flex-direction: column;
+                padding: 1rem 0;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            nav ul.active {
+                display: flex;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .explore-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-container {
+                grid-template-columns: 10fr;
+                gap: 2rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .mySlides img {
+                height: 300px;
+            }
+            
+            .slide-content h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+            }
+            
+            .mySlides img {
+                height: 250px;
+            }
+            
+            .slide-content {
+                padding: 1rem;
+            }
+            
+            .slide-content h2 {
+                font-size: 1.2rem;
+            }
+            
+            .slide-content p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="#top" class="logo">
+                <img src="https://placehold.co/40x40/FFB81C/000000?text=AA" alt="Dr. Admasu Abebe Logo" class="logo-image">
+                <span>Dr. Admasu Abebe</span>
+            </a>
+            
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="Scholarship.html">Scholarship</a></li>
+                    <li><a href="Portfolio.html">Portfolio</a></li>
+                    <li><a href="Competence.html">Competence</a></li>
+                    <li><a href="Connections.html">Connections</a></li>
+                    <li><a href="Publicity.html">Publicity</a></li>
+                </ul>
+            </nav>
+            <div class="cta-buttons">
+                <a href="Admasu-CV.pdf" target="_blank" class="btn btn-primary">Download CV</a>
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="creative-hero" id="creative-top">
+        <!-- Floating elements for background -->
+        <div class="creative-floating-element"></div>
+        <div class="creative-floating-element"></div>
+        <div class="creative-floating-element"></div>
+        <div class="creative-floating-element"></div>
+        
+        <!-- Particle animation background -->
+        <div id="particles" class="particles-container"></div>
+        
+        <div class="creative-hero-container">
+            <div class="creative-hero-image">
+                <img src="5897581605055220023.jpg" alt="Professional Headshot" class="creative-headshot" id="creative-headshot" style="width: 320px; height: 400px; object-fit: cover;">
+                <div class="creative-photo-frame"></div>
+                <div class="creative-photo-decoration"></div>
+            </div>
+            <div class="creative-hero-content">
+                <h1><span class="creative-typewriter">Exploring Culture, Heritage,<br> and Dev't Through <br> Anthropological Research</span></h1>
+                <p>I'm a Social Anthropologist dedicated to researching cultural heritage, indigenous knowledge systems, and development policies that promote inclusion and community participation.</p>
+                <div class="creative-hero-buttons">
+                    <a href="#projects" class="creative-btn creative-btn-primary">View My Work</a>
+                    <a href="scholarship.html#publications" class="creative-btn creative-btn-outline">Read Publications</a>
+                    <a href="#connect" class="creative-btn creative-btn-outline">Get In Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Slideshow Section -->
+    <section class="slideshow-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">My Research Work</h2>
+            <div class="slideshow-container">
+                <div class="mySlides fade active">
+                    <img src="https://placehold.co/1000x500/0A2342/FFFFFF?text=Dawuro+Walls+Research" alt="Dawuro Walls Research">
+                    <div class="slide-content">
+                        <h2>Research on Great Dawuro Walls</h2>
+                        <p>Documenting and preserving the historical defensive walls of Dawuro, Southwest Ethiopia</p>
+                    </div>
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="https://placehold.co/1000x500/007C91/FFFFFF?text=Community+Engagement" alt="Community Engagement">
+                    <div class="slide-content">
+                        <h2>Community Participation</h2>
+                        <p>Working with local communities to safeguard endangered cultural heritage</p>
+                    </div>
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="https://placehold.co/1000x500/FFB81C/000000?text=Cultural+Music+Documentation" alt="Cultural Music Documentation">
+                    <div class="slide-content">
+                        <h2>Dinka Music Instrument</h2>
+                        <p>Researching and promoting the world's longest cultural music instrument of Dawuro</p>
+                    </div>
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">❮</a>
+                <a class="next" onclick="plusSlides(1)">❯</a>
+            </div>
+            <br>
+
+            <div class="dots-container">
+                <span class="dot active-dot" onclick="currentSlide(1)"></span> 
+                <span class="dot" onclick="currentSlide(2)"></span> 
+                <span class="dot" onclick="currentSlide(3)"></span> 
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-container">
+                <div class="about-content">
+                    <p>I am an Assistant Professor of Social Anthropology at Mada Walabu University with over 10 years of experience in research, teaching, and community engagement. My work focuses on cultural studies, development policy, inclusion & marginalization, GIS mapping, indigenous knowledge, heritage tourism policy, and environmental/social impact assessment.</p>
+                    <p>I hold a PhD in Social Anthropology from Addis Ababa University, where my research on "History, Heritage and Developmental Modernity in Dawuro: The Great Dawuro Walls/Kati Halala Keela as a Contested Site" received recognition. My work has been published in reputable journals and presented at international conferences.</p>
+                    <p>Currently, I'm managing the British Council's Cultural Protection Fund project for Dessie Museum Renovation and continuing my research on indigenous knowledge systems and cultural heritage preservation in Ethiopia.</p>
+                    <a href="#cv" class="btn btn-primary">View Full CV</a>
+                </div>
+                <div class="skills-card">
+                    <h3>Areas of Expertise</h3>
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fas fa-landmark"></i>
+                        </div>
+                        <div>
+                            <h4>Cultural Studies</h4>
+                            <p>Ethnographic research, indigenous knowledge systems</p>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <div>
+                            <h4>GIS Mapping</h4>
+                            <p>Spatial analysis of cultural heritage sites</p>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <div>
+                            <h4>Development Policy</h4>
+                            <p>Inclusion, marginalization, community participation</p>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fas fa-file-contract"></i>
+                        </div>
+                        <div>
+                            <h4>Impact Assessment</h4>
+                            <p>Environmental and social impact assessment</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Featured Projects -->
+    <section class="section" id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-carousel">
+                <div class="project-cards" id="project-cards">
+                    <div class="project-card">
+                        <div class="project-image" style="background-image: url('https://placehold.co/600x400/0A2342/FFFFFF?text=Dessie+Museum+Renovation')"></div>
+                        <div class="project-content">
+                            <h3 class="project-title">Dessie Museum Renovation Project</h3>
+                            <p>Managing British Council's Cultural Protection Fund project for Ethiopian Heritage Trust.</p>
+                            <div class="project-stats">
+                                <div class="stat">
+                                    <i class="fas fa-calendar"></i>
+                                    <span>2023-2025</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-pound-sign"></i>
+                                    <span>Cultural Fund</span>
+                                </div>
+                            </div>
+                            <a href="#" class="btn btn-outline">View Project Details</a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image" style="background-image: url('https://placehold.co/600x400/007C91/FFFFFF?text=Dawuro+Heritage+Preservation')"></div>
+                        <div class="project-content">
+                            <h3 class="project-title">Dawuro Heritage Preservation</h3>
+                            <p>Enhancing community awareness and participation to safeguard endangered cultural heritages of Dawuro.</p>
+                            <div class="project-stats">
+                                <div class="stat">
+                                    <i class="fas fa-users"></i>
+                                    <span>5 communities</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-landmark"></i>
+                                    <span>12 heritage sites</span>
+                                </div>
+                            </div>
+                            <a href="#" class="btn btn-outline">View Project</a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image" style="background-image: url('https://placehold.co/600x400/FFB81C/000000?text=Dinka+Music+Research')"></div>
+                        <div class="project-content">
+                            <h3 class="project-title">Dinka Music Instrument Research</h3>
+                            <p>Documenting and promoting the world's longest cultural music instrument of Dawuro.</p>
+                            <div class="project-stats">
+                                <div class="stat">
+                                    <i class="fas fa-music"></i>
+                                    <span>World's longest</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-film"></i>
+                                    <span>TV features</span>
+                                </div>
+                            </div>
+                            <a href="#" class="btn btn-outline">View Research</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-nav">
+                    <div class="carousel-btn prev-btn">
+                        <i class="fas fa-chevron-left"></i>
+                    </div>
+                    <div class="carousel-btn next-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="connect">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Connect With Me</h3>
+                    <p>I'm always interested in discussing new research collaborations, cultural heritage projects, or academic exchanges.</p>
+                    <p><strong>Email:</strong> admasu.abebe143@gmail.com<br>
+                       <strong>Alternate:</strong> haile.admasu@uni-erfurt.de<br>
+                       <strong>Phone:</strong> +25193070891 or +4915215134806<br>
+                       <strong>ORCID:</strong> 0000-0002-3794-2865</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-researchgate"></i></a>
+                        <a href="#"><i class="fab fa-google-scholar"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Dr. Admasu Abebe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <a href="#top" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        // Header shrink on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shrink');
+            } else {
+                header.classList.remove('shrink');
+            }
+        });
+        
+        // Back to top button
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.scrollY > 400) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+        
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+        
+        // Create particle animation for hero section
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random properties
+                const size = Math.random() * 20 + 5;
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                const delay = Math.random() * 15;
+                const duration = Math.random() * 10 + 15;
+                
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${posX}%`;
+                particle.style.top = `${posY}%`;
+                particle.style.animationDelay = `${delay}s`;
+                particle.style.animationDuration = `${duration}s`;
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
+        // Scroll animation with Intersection Observer
+        function initScrollAnimations() {
+            const sections = document.querySelectorAll('.section');
+            const exploreCards = document.querySelectorAll('.explore-card');
+            const publicationItems = document.querySelectorAll('.publication-item');
+            const projectCards = document.querySelectorAll('.project-card');
+            const footerLinks = document.querySelectorAll('.footer-links li');
+            const socialLinks = document.querySelectorAll('.social-links a');
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const sectionObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+            
+            const cardObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            const footerObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        document.querySelector('.footer-links').classList.add('animate');
+                        document.querySelector('.social-links').classList.add('animate');
+                    }
+                });
+            }, {
+                threshold: 0.5
+            });
+            
+            // Observe sections
+            sections.forEach(section => {
+                sectionObserver.observe(section);
+            });
+            
+            // Observe cards
+            exploreCards.forEach(card => {
+                cardObserver.observe(card);
+            });
+            
+            publicationItems.forEach(item => {
+                cardObserver.observe(item);
+            });
+            
+            projectCards.forEach(card => {
+                cardObserver.observe(card);
+            });
+            
+            // Observe footer
+            const footer = document.querySelector('footer');
+            footerObserver.observe(footer);
+        }
+        
+        // Project carousel navigation
+        function initProjectCarousel() {
+            const projectCards = document.getElementById('project-cards');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            
+            let scrollAmount = 0;
+            const scrollStep = 320; // card width + gap
+            
+            prevBtn.addEventListener('click', () => {
+                scrollAmount = Math.max(scrollAmount - scrollStep, 0);
+                projectCards.scrollTo({
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
+            });
+            
+            nextBtn.addEventListener('click', () => {
+                scrollAmount = Math.min(scrollAmount + scrollStep, projectCards.scrollWidth - projectCards.clientWidth);
+                projectCards.scrollTo({
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
+            });
+        }
+        
+        // Slideshow functionality
+        let slideIndex = 1;
+        
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            
+            for (i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
+            }
+            
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active-dot", "");
+            }
+            
+            slides[slideIndex-1].classList.add("active");  
+            dots[slideIndex-1].className += " active-dot";
+            
+            // Auto-advance slides every 5 seconds
+            clearTimeout(window.slideTimer);
+            window.slideTimer = setTimeout(() => {
+                plusSlides(1);
+            }, 5000);
+        }
+        
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+        
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Close mobile menu if open
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80, // Adjust for header height
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            createParticles();
+            initScrollAnimations();
+            initProjectCarousel();
+            showSlides(slideIndex);
+            
+            // Add animation delays to explore cards
+            document.querySelectorAll('.explore-card').forEach((card, index) => {
+                card.style.transitionDelay = `${index * 0.1}s`;
+            });
+            
+            // Add animation delays to publication items
+            document.querySelectorAll('.publication-item').forEach((item, index) => {
+                item.style.transitionDelay = `${index * 0.1}s`;
+            });
+            
+            // Add animation delays to project cards
+            document.querySelectorAll('.project-card').forEach((card, index) => {
+                card.style.transitionDelay = `${index * 0.1}s`;
+            });
+        });
+         // 3D tilt effect for the photo
+        document.addEventListener('DOMContentLoaded', function() {
+            const headshot = document.getElementById('creative-headshot');
+            const frame = document.querySelector('.creative-photo-frame');
+            const hero = document.querySelector('.creative-hero');
+            
+            // Add mousemove effect for 3D tilt
+            hero.addEventListener('mousemove', function(e) {
+                const x = e.clientX;
+                const y = e.clientY;
+                
+                const middleX = window.innerWidth / 2;
+                const middleY = window.innerHeight / 2;
+                
+                const offsetX = ((x - middleX) / middleX) * 15;
+                const offsetY = ((y - middleY) / middleY) * 15;
+                
+                headshot.style.transform = `translateZ(20px) rotateY(${offsetX}deg) rotateX(${-offsetY}deg)`;
+                frame.style.transform = `translateZ(10px) rotateY(${offsetX}deg) rotateX(${-offsetY}deg)`;
+            });
+            
+            // Reset transform when mouse leaves
+            hero.addEventListener('mouseleave', function() {
+                headshot.style.transform = 'translateZ(20px) rotateY(0) rotateX(0)';
+                frame.style.transform = 'translateZ(10px) rotateY(0) rotateX(0)';
+            });
+            
+            // Add floating animation to elements
+            const floatingElements = document.querySelectorAll('.creative-floating-element');
+            floatingElements.forEach((el, index) => {
+                // Randomize animation duration and delay
+                const duration = 10 + Math.random() * 10;
+                const delay = Math.random() * 5;
+                
+                el.style.animationDuration = `${duration}s`;
+                el.style.animationDelay = `${delay}s`;
+            });
+        });
+    </script>
+</body>
+</html>

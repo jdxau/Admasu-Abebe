@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Admasu Abebe | Projects & Professional Work</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='transparent'/%3E%3Ctext x='50' y='70' font-size='90' fill='white' text-anchor='middle' font-family='Arial, sans-serif'%3EA%3C/text%3E%3C/svg%3E">
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary: #07112a;
+            --secondary: #007C91;
+            --accent: #FFB81C;
+            --light: #f6f8fb;
+            --white: #ffffff;
+            --gray: #6b7280;
+            --light-gray: #e5e7eb;
+            --radius: 12px;
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--primary);
+            background-color: var(--light);
+            -webkit-font-smoothing: antialiased;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+        }
+
+        h3 {
+            font-size: 1.75rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            position: relative;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background-color: #e6a500;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--light-gray);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            background-color: rgba(255, 255, 255, 0.52);
+      backdrop-filter: blur(70px);
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .brand-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .brand-text h1 {
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .brand-text p {
+            font-size: 0.8rem;
+            color: var(--gray);
+            margin-bottom: 0;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-link {
+            font-weight: 600;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 5rem 0;
+            position: relative;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: rgba(0, 124, 145, 0.1);
+            color: var(--secondary);
+            font-weight: 600;
+            font-size: 0.8rem;
+            border-radius: 50px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Sections */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-subtitle {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .project-card.animate {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .project-period {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .project-desc {
+            margin-bottom: 1.5rem;
+            color: var(--gray);
+        }
+
+        .project-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--gray);
+            opacity: 0.8;
+        }
+
+        .project-link {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            background: var(--accent);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: var(--radius);
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .project-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(255, 184, 28, 0.3);
+        }
+
+        /* Consultancy & Fieldwork */
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .client-item {
+            background: white;
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .client-item.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .client-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .client-logo {
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+            color: var(--secondary);
+        }
+
+        .client-name {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .focus-areas {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .focus-item {
+            background: white;
+            border-radius: var(--radius);
+            padding: 1.2rem;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .focus-item.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .focus-item:hover {
+            transform: translateX(5px);
+        }
+
+        .focus-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        /* Licensed Consultancy */
+        .consultancy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .consultancy-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--accent);
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .consultancy-card.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .consultancy-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .consultancy-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .consultancy-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .consultancy-desc {
+            color: var(--gray);
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #07112a 0%, #0a2a44 100%);
+            color: white;
+            padding: 4rem 0 2rem;
+            border-top-left-radius: var(--radius);
+            border-top-right-radius: var(--radius);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h4 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .footer-links h4 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .footer-links ul {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .footer-contact h4 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius);
+            background-color: var(--light);
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background-color: var(--accent);
+            color: var(--primary);
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 99;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Loading animation 
+        .loader {
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+        }
+        .loader:after {
+            content: " ";
+            display: block;
+            width: 64px;
+            height: 64px;
+            margin: 8px;
+            border-radius: 50%;
+            border: 6px solid var(--accent);
+            border-color: var(--accent) transparent var(--accent) transparent;
+            animation: loader 1.2s linear infinite;
+        }
+        @keyframes loader {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loader-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--white);
+            z-index: 9998;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+*/
+        /* Progress bar */
+        .progress-container {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 4px;
+            background: transparent;
+            z-index: 1000;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background: var(--accent);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                flex-direction: column;
+                background-color: var(--white);
+                width: 100%;
+                padding: 2rem;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                transition: var(--transition);
+                z-index: 99;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .projects-grid,
+            .clients-grid,
+            .focus-areas,
+            .consultancy-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .project-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .stat {
+                text-align: left;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding-bottom: 0.5rem;
+                border-bottom: 1px solid #eee;
+            }
+            
+            .stat:last-child {
+                border-bottom: none;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .hero-title {
+                font-size: 2.25rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading overlay -->
+    <div class="loader-overlay" id="loader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Progress bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Header with blurred effect -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="brand">
+                    <div class="brand-img">
+                        <img src="photo_1.jpg" alt="Dr. Admasu Abebe">
+                    </div>
+                    <div class="brand-text">
+                        <h1>Dr. Admasu Abebe</h1>
+                        <p>Social Anthropologist • Cultural Heritage</p>
+                    </div>
+                </a>
+                
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Scholarship.html">Scholarship</a></li>
+                    <li><a href="Portfolio.html">Portfolio</a></li>
+                    <li><a href="Competence.html">Competence</a></li>
+                    <li><a href="Connections.html">Connections</a></li>
+                    <li><a href="Publicity.html">Publicity</a></li>
+                    <li><b><a href="Store.html" style="color: #06697b;">Store</a></b></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <a href="Admasu-CV.pdf" class="btn btn-outline" target="_blank" rel="noopener">
+                        <i class="fas fa-download"></i> CV
+                    </a>
+                    <button class="mobile-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+            <div class="hero-content" style="justify-items: center; align-items: center; text-align: center;">
+                <span class="hero-badge" style="margin-bottom: 2rem;">Portfolio & Professional Work</span>
+                <h1 class="hero-title" style="margin-bottom: 2rem;">Projects & Professional Work</h1>
+                <p class="hero-description" style="margin-bottom: 2.5rem;">Leading innovative projects and providing expert consultancy in cultural heritage, development, and social impact assessment</p>
+            </div>
+            </div>
+        </section>
+
+        <!-- Project Management -->
+        <section class="section" id="project-management">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Project Management</h2>
+                    <p class="section-subtitle">Key initiatives and leadership roles</p>
+                </div>
+                
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image" style="background-image: url('https://github.com/jdxau/Admasu-Abebe/blob/main/dessie.jpg?raw=true')"></div>
+                        <div class="project-content">
+                            <h3 class="project-title">Dessie Museum Renovation Project</h3>
+                            <span class="project-period">Dec 2023 – Mar 2025</span>
+                            <p class="project-desc">Project Manager for British Council's Cultural Protection Fund, managing the renovation of Dessie Museum in collaboration with Ethiopian Heritage Trust.</p>
+                            <div class="project-stats">
+                                <div class="stat">
+                                    <div class="stat-number">£405K+</div>
+                                    <div class="stat-label">Budget</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat-number">12</div>
+                                    <div class="stat-label">Team Members</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat-number">1</div>
+                                    <div class="stat-label">Museum</div>
+                                </div>
+                            </div>
+                            <a href="https://www.eht.et/projects/" class="project-link">View Project</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                     <div class="project-image" style="background-image: url('https://raw.githubusercontent.com/jdxau/Admasu-Abebe/main/heritage-preservation.jpg');"></div>
+                        <div class="project-content">
+                            <h3 class="project-title">Dawuro Heritage Preservation</h3>
+                            <span class="project-period">Oct 2016 – Mar 2017</span>
+                            <p class="project-desc">Project Manager of Christensen Fund project "Enhancing Community Awareness and Participation to Safeguard Endangered Cultural Heritages of Dawuro."</p>
+                            <div class="project-stats">
+                                <div class="stat">
+                                    <div class="stat-number">$30K</div>
+                                    <div class="stat-label">Budget</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat-number">200+</div>
+                                    <div class="stat-label">Communities</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat-number">4+</div>
+                                    <div class="stat-label">Heritage Sites</div>
+                                </div>
+                            </div>
+                            <a href="Store.html" class="project-link">Go to store</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image" style="background-image: url('https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg')"></div>
+                        <div class="project-content">
+                            <h3 class="project-title">Madawalabu Museum Development</h3>
+                            <span class="project-period">2014</span>
+                            <p class="project-desc">Museum Project Coordinator for "Improving the collection and status of Madawalabu Museum" including exhibition design and community engagement.</p>
+                            <div class="project-stats">
+                                <div class="stat">
+                                    <div class="stat-number">ETB 80K</div>
+                                    <div class="stat-label">Budget</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat-number">3</div>
+                                    <div class="stat-label">Exhibitions</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat-number">500+</div>
+                                    <div class="stat-label">Artifacts</div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Consultancy & Fieldwork -->
+        <section class="section" id="consultancy">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Consultancy & Fieldwork</h2>
+                    <p class="section-subtitle">Collaborations and focus areas</p>
+                </div>
+                
+                <h3 style="margin-bottom: 1.5rem; color: var(--primary);">Collaborating Organizations</h3>
+                <div class="clients-grid">
+                    <div class="client-item">
+                        <div class="client-logo">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <div class="client-name">National Democratic Institute (NDI)</div>
+                    </div>
+                    <div class="client-item">
+                        <div class="client-logo">
+                            <i class="fas fa-vote-yea"></i>
+                        </div>
+                        <div class="client-name">European Centre for Electoral Support (ECES)</div>
+                    </div>
+                    <div class="client-item">
+                        <div class="client-logo">
+                            <i class="fas fa-democrat"></i>
+                        </div>
+                        <div class="client-name">International Foundation for Electoral Systems (IFES)</div>
+                    </div>
+                    <div class="client-item">
+                        <div class="client-logo">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="client-name">GIZ Ethiopia</div>
+                    </div>
+                    <div class="client-item">
+                        <div class="client-logo">
+                            <i class="fas fa-peace"></i>
+                        </div>
+                        <div class="client-name">United Nations Development Programme (UNDP)</div>
+                    </div>
+                    <div class="client-item">
+                        <div class="client-logo">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="client-name">Harvard Kennedy School</div>
+                    </div>
+                    <div class="client-item">
+                        <div class="client-logo">
+                            <i class="fas fa-school"></i>
+                        </div>
+                        <div class="client-name">Addis Ababa University</div>
+                    </div>
+                </div>
+
+                <h3 style="margin-bottom: 1.5rem; color: var(--primary);">Focus Areas</h3>
+                <div class="focus-areas">
+                    <div class="focus-item">
+                        <div class="focus-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div>
+                            <h4>Environmental Impact Assessment</h4>
+                            <p>Evaluating the environmental consequences of development projects</p>
+                        </div>
+                    </div>
+                    <div class="focus-item">
+                        <div class="focus-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div>
+                            <h4>Social Impact Assessment</h4>
+                            <p>Analyzing how projects affect communities and social structures</p>
+                        </div>
+                    </div>
+                    <div class="focus-item">
+                        <div class="focus-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div>
+                            <h4>Qualitative Research</h4>
+                            <p>In-depth interviews, focus groups, and ethnographic approaches</p>
+                        </div>
+                    </div>
+                    <div class="focus-item">
+                        <div class="focus-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div>
+                            <h4>Policy Analysis</h4>
+                            <p>Evaluating and developing effective policy frameworks</p>
+                        </div>
+                    </div>
+                    <div class="focus-item">
+                        <div class="focus-icon">
+                            <i class="fas fa-monument"></i>
+                        </div>
+                        <div>
+                            <h4>Cultural Tourism</h4>
+                            <p>Developing sustainable cultural heritage tourism programs</p>
+                        </div>
+                    </div>
+                    <div class="focus-item">
+                        <div class="focus-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <div>
+                            <h4>Ethnographic Research</h4>
+                            <p>Immersive cultural studies and community-based research</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Licensed Consultancy Fields -->
+        <section class="section" id="consultancy-fields">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Licensed Consultancy Fields</h2>
+                    <p class="section-subtitle">Areas of professional expertise</p>
+                </div>
+                <div class="consultancy-grid">
+                    <div class="consultancy-card">
+                        <div class="consultancy-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3 class="consultancy-title">Art & Culture</h3>
+                        <p class="consultancy-desc">Strategic planning for cultural institutions, public art programs, and creative industry development.</p>
+                    </div>
+                    <div class="consultancy-card">
+                        <div class="consultancy-icon">
+                            <i class="fas fa-mountain"></i>
+                        </div>
+                        <h3 class="consultancy-title">Hotel & Tourism</h3>
+                        <p class="consultancy-desc">Sustainable tourism development, heritage tourism, and community-based tourism initiatives.</p>
+                    </div>
+                    <div class="consultancy-card">
+                        <div class="consultancy-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="consultancy-title">Education & Social Affairs</h3>
+                        <p class="consultancy-desc">Educational program development, social policy, and community engagement strategies.</p>
+                    </div>
+                    <div class="consultancy-card">
+                        <div class="consultancy-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="consultancy-title">Economic Development</h3>
+                        <p class="consultancy-desc">Local economic development planning, SME support, and investment attraction strategies.</p>
+                    </div>
+                    <div class="consultancy-card">
+                        <div class="consultancy-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3 class="consultancy-title">Business & Investment</h3>
+                        <p class="consultancy-desc">Market analysis, feasibility studies, and business development support services.</p>
+                    </div>
+                    <div class="consultancy-card">
+                        <div class="consultancy-icon">
+                            <i class="fas fa-hard-hat"></i>
+                        </div>
+                        <h3 class="consultancy-title">Occupational Safety</h3>
+                        <p class="consultancy-desc">Workplace safety assessments, compliance consulting, and risk management services.</p>
+                    </div>
+                    <div class="consultancy-card">
+                        <div class="consultancy-icon">
+                            <i class="fas fa-landmark"></i>
+                        </div>
+                        <h3 class="consultancy-title">Museum & Heritage Management</h3>
+                        <p class="consultancy-desc">Collection management, exhibition development, and heritage institution planning.</p>
+                    </div>
+                    <div class="consultancy-card">
+                        <div class="consultancy-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <h3 class="consultancy-title">Quality Management Systems</h3>
+                        <p class="consultancy-desc">ISO certification, process improvement, and organizational efficiency consulting.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h4>Dr. Admasu Abebe</h4>
+                    <p>Preserving culture and enabling community-driven development through research, policy and practice.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="Scholarship.html">Scholarship</a></li>
+                        <li><a href="Competence.html">Competence</a></li>
+                        <li><a href="Connections.html">Connections</a></li>
+                        <li><a href="Publicity.html">Publicity</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>admasu.abebe143@gmail.com<br>+251 930 708 91</p>
+                     <div class="social-links">
+              <a href="https://www.linkedin.com/in/dr-admasu-abebe-229538260?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BlNlTM2%2FsSHWHWsHbM0iWXw%3D%3D" class="social-link" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://t.me/+251913070891" class="social-link" aria-label="telegram">
+                <i class="fab fa-telegram"></i>
+              </a>
+              <a href="https://www.researchgate.net/profile/Admasu-Haile" class="social-link" aria-label="ResearchGate">
+                <i class="fab fa-researchgate"></i>
+              </a>
+              <a href="https://wa.me/251913070891?text=Hello" class="social-link" aria-label="whatsapp" target="_blank">
+              <i class="fab fa-whatsapp"></i>
+              </a>
+
+              </a>
+            </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Dr. Admasu Abebe — All rights reserved</p>
+            </div>
+            <p><small>ORCID: 0000-0002-3794-2865</small></p>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hide loader when page is loaded
+            window.addEventListener('load', function() {
+                const loader = document.getElementById('loader');
+                setTimeout(function() {
+                    loader.style.opacity = '0';
+                    setTimeout(function() {
+                        loader.style.display = 'none';
+                    }, 1);
+                }, 1);
+            });
+
+            // Mobile menu toggle
+            const menuToggle = document.getElementById('menuToggle');
+            const navMenu = document.getElementById('nav-menu');
+            
+            menuToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                menuToggle.innerHTML = navMenu.classList.contains('active') ? 
+                    '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            });
+            
+            // Close menu when clicking on links
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                });
+            });
+            
+            // Back to top button
+            const backToTop = document.getElementById('backToTop');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 400) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+                
+                // Update progress bar
+                const winHeight = window.innerHeight;
+                const docHeight = document.documentElement.scrollHeight;
+                const scrolled = window.pageYOffset;
+                const trackLength = docHeight - winHeight;
+                const progress = scrolled / trackLength * 100;
+                document.getElementById('progressBar').style.width = progress + '%';
+            });
+            
+            backToTop.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Animation for elements on scroll
+            const animatedElements = document.querySelectorAll('.project-card, .client-item, .focus-item, .consultancy-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            animatedElements.forEach(element => {
+                observer.observe(element);
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        // Close mobile menu if open
+                        navMenu.classList.remove('active');
+                        menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                        
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Add subtle animation to hero section
+            const heroContent = document.querySelector('.hero-content');
+            heroContent.style.opacity = '0';
+            heroContent.style.transform = 'translateY(20px)';
+            heroContent.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            
+            setTimeout(() => {
+                heroContent.style.opacity = '1';
+                heroContent.style.transform = 'translateY(0)';
+            }, 300);
+        });
+    </script>
+</body>
+</html>

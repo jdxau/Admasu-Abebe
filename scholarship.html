@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Admasu Abebe | Academics & Research</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='transparent'/%3E%3Ctext x='50' y='70' font-size='90' fill='white' text-anchor='middle' font-family='Arial, sans-serif'%3EA%3C/text%3E%3C/svg%3E">
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary: #07112a;
+            --secondary: #007C91;
+            --accent: #FFB81C;
+            --light: #f6f8fb;
+            --white: #ffffff;
+            --gray: #6b7280;
+            --light-gray: #e5e7eb;
+            --radius: 12px;
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--primary);
+            background-color: var(--light);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+        }
+
+        h3 {
+            font-size: 1.75rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            position: relative;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background-color: #e6a500;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--light-gray);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            background-color: rgba(255, 255, 255, 0.52);
+      backdrop-filter: blur(70px);
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .brand-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .brand-text h1 {
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .brand-text p {
+            font-size: 0.8rem;
+            color: var(--gray);
+            margin-bottom: 0;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-link {
+            font-weight: 600;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 5rem 0;
+            position: relative;
+            background: linear-gradient(135deg, rgba(7, 17, 42, 0.03) 0%, rgba(0, 124, 145, 0.03) 100%);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: rgba(0, 124, 145, 0.1);
+            color: var(--secondary);
+            font-weight: 600;
+            font-size: 0.8rem;
+            border-radius: 50px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Sections */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-subtitle {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* Education Timeline */
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--primary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 10px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .timeline-item.animate {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background-color: white;
+            border: 4px solid var(--accent);
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(odd)::after {
+            right: -13px;
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -13px;
+        }
+
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--secondary);
+            transition: var(--transition);
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-date {
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .timeline-desc {
+            font-size: 0.95rem;
+            color: var(--gray);
+            opacity: 0.9;
+        }
+
+        /* Research Interests */
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .interest-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 4px solid var(--accent);
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .interest-card.animate {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .interest-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .interest-icon {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .interest-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        /* Grants & Publications */
+        .grants-list, .pubs-list, .conferences-list {
+            list-style: none;
+        }
+
+        .grant-item, .pub-item, .conference-item {
+            background: white;
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--secondary);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+
+        .grant-item.animate, .pub-item.animate, .conference-item.animate {
+            opacity: 1;
+            transform: translateX(0);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .grant-item:hover, .pub-item:hover, .conference-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .grant-title, .pub-title, .conference-title {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .grant-details, .pub-details, .conference-details {
+            font-size: 0.95rem;
+            color: var(--gray);
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        .grant-year, .pub-year, .conference-year {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* Tabs for Publications */
+        .tabs {
+            display: flex;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--light-gray);
+        }
+
+        .tab {
+            padding: 0.8rem 1.5rem;
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--gray);
+            opacity: 0.7;
+            transition: var(--transition);
+        }
+
+        .tab.active {
+            opacity: 1;
+            color: var(--primary);
+            border-bottom: 3px solid var(--accent);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        /* Academic Positions */
+        .positions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .position-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+            border-top: 4px solid var(--accent);
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .position-card.animate {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .position-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .position-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .position-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .position-period {
+            font-size: 0.9rem;
+            color: var(--secondary);
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #07112a 0%, #0a2a44 100%);
+            color: white;
+            padding: 4rem 0 2rem;
+            border-top-left-radius: var(--radius);
+            border-top-right-radius: var(--radius);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h4 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .footer-links h4 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .footer-links ul {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .footer-contact h4 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius);
+            background-color: var(--light);
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background-color: var(--accent);
+            color: var(--primary);
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 99;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+
+            .timeline-item:nth-child(odd)::after,
+            .timeline-item:nth-child(even)::after {
+                left: 18px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                flex-direction: column;
+                background-color: var(--white);
+                width: 100%;
+                padding: 2rem;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                transition: var(--transition);
+                z-index: 99;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+
+            .interests-grid,
+            .positions-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tabs {
+                flex-wrap: wrap;
+            }
+
+            .tab {
+                padding: 0.5rem 1rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .hero-title {
+                font-size: 2.25rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with blurred effect -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="brand">
+                    <div class="brand-img">
+                        <img src="photo_1.jpg" alt="Dr. Admasu Abebe">
+                    </div>
+                    <div class="brand-text">
+                        <h1>Dr. Admasu Abebe</h1>
+                        <p>Social Anthropologist • Cultural Heritage</p>
+                    </div>
+                </a>
+                
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Scholarship.html">Scholarship</a></li>
+                    <li><a href="Portfolio.html">Portfolio</a></li>
+                    <li><a href="Competence.html">Competence</a></li>
+                    <li><a href="Connections.html">Connections</a></li>
+                    <li><a href="Publicity.html">Publicity</a></li>
+                    <li><b><a href="Store.html" style="color: #06697b;">Store</a></b></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <a href="Admasu-CV.pdf" class="btn btn-outline" target="_blank" rel="noopener">
+                        <i class="fas fa-download"></i> CV
+                    </a>
+                    <button class="mobile-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="container">
+            <div class="hero-content">
+                <span class="hero-badge">Academic Excellence</span>
+                <h1 class="hero-title">Academics & Research</h1>
+                <p class="hero-description">
+                Advancing knowledge at the intersection of anthropology, development policy, and cultural heritage.<br>
+                <strong>Dr. Admasu Abebe</strong> is committed to impactful research, innovative teaching, and fostering inclusive academic communities.
+                </p>
+                <div style="margin-top:2rem;">
+                <a href="#education" class="btn btn-primary">
+                    <i class="fas fa-graduation-cap"></i> View Education
+                </a>
+                <a href="#publications" class="btn btn-outline">
+                    <i class="fas fa-book"></i> Publications
+                </a>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="section" id="education">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Education</h2>
+                    <p class="section-subtitle">Academic journey and qualifications</p>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">April - July 2024</div>
+                            <h3 class="timeline-title">Postdoctoral Research Fellow</h3>
+                            <p class="timeline-desc">Transcultural Research Center, Erfurt University, Germany<br>
+                            Research: "Beyond Cartography: Revisiting Antiono d'Abbadie's Studies in Making Enset Culture (1840s to 1890s)"</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">2016/17 - 2023</div>
+                            <h3 class="timeline-title">PhD in Social Anthropology</h3>
+                            <p class="timeline-desc">Addis Ababa University, Ethiopia<br>
+                            Dissertation: "History, Heritage and Developmental Modernity in Dawuro: The Great Dawuro Walls/Kati Halala Keela as a Contested Site"</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">2009 - 2011</div>
+                            <h3 class="timeline-title">MA in Cultural Studies/Ethiopian Studies</h3>
+                            <p class="timeline-desc">Addis Ababa University, Ethiopia</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">2007</div>
+                            <h3 class="timeline-title">Higher Diploma Program (HDP)</h3>
+                            <p class="timeline-desc">License Certified Teacher Educator, Jimma University, Ethiopia</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">2004 - 2006</div>
+                            <h3 class="timeline-title">Bachelor of Education in History (BED)</h3>
+                            <p class="timeline-desc">Jimma University, Ethiopia</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Academic Positions -->
+        <section class="section" id="positions">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Academic Positions</h2>
+                    <p class="section-subtitle">Professional roles and responsibilities</p>
+                </div>
+                <div class="positions-grid">
+                    <div class="position-card">
+                        <div class="position-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h3 class="position-title">Assistant Professor in Anthropology</h3>
+                        <p class="position-period">2023 - 2024 (September)</p>
+                        <p>Addis Ababa University, Ethiopia</p>
+                    </div>
+                    <div class="position-card">
+                        <div class="position-icon">
+                            <i class="fas fa-book-reader"></i>
+                        </div>
+                        <h3 class="position-title">Lecturer in History and Heritage Management</h3>
+                        <p class="position-period">2011 - 2023 (July)</p>
+                        <p>Mada Walabu University, Ethiopia</p>
+                    </div>
+                    <div class="position-card">
+                        <div class="position-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <h3 class="position-title">Assistant Lecturer</h3>
+                        <p class="position-period">2006 - 2009</p>
+                        <p>Bonga College of Teacher Education, Kafa, Ethiopia</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Focus -->
+        <section class="section" id="research">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Research Focus & Interests</h2>
+                    <p class="section-subtitle">Areas of academic expertise</p>
+                </div>
+                <div class="interests-grid">
+                    <div class="interest-card">
+                        <div class="interest-icon">
+                            <i class="fas fa-globe-americas"></i>
+                        </div>
+                        <h3 class="interest-title">Cultural and Museum Studies</h3>
+                        <p>Ethnographic research, indigenous knowledge systems, and cultural heritage preservation with a focus on Ethiopian communities.</p>
+                    </div>
+                    <div class="interest-card">
+                        <div class="interest-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="interest-title">Development Policy</h3>
+                        <p>Analysis of development frameworks and their impact on local communities, inclusion policies, and marginalization issues.</p>
+                    </div>
+                    <div class="interest-card">
+                        <div class="interest-icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <h3 class="interest-title">GIS Mapping</h3>
+                        <p>Applying GIS technology to anthropological research, cultural heritage mapping, and spatial analysis of social phenomena.</p>
+                    </div>
+                    <div class="interest-card">
+                        <div class="interest-icon">
+                            <i class="fas fa-landmark"></i>
+                        </div>
+                        <h3 class="interest-title">Heritage Tourism Policy</h3>
+                        <p>Developing sustainable tourism policies that preserve cultural heritage while benefiting local communities.</p>
+                    </div>
+                    <div class="interest-card">
+                        <div class="interest-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="interest-title">Inclusion & Marginalization</h3>
+                        <p>Research on inclusive policies, social equity, and addressing marginalization in development contexts.</p>
+                    </div>
+                    <div class="interest-card">
+                        <div class="interest-icon">
+                            <i class="fas fa-file-contract"></i>
+                        </div>
+                        <h3 class="interest-title">Impact Assessment</h3>
+                        <p>Environmental and Social Impact Assessment (ESIA) for development projects, ensuring sustainable outcomes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Grants & Scholarships -->
+        <section class="section" id="grants">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Research Scholarships & Grants</h2>
+                    <p class="section-subtitle">Funding and recognition for research</p>
+                </div>
+                <ul class="grants-list">
+                    <li class="grant-item">
+                        <h3 class="grant-title">Research Scholarship: SAIMP Project</h3>
+                        <p class="grant-details">Strengthening Africa Italia Museum Partnership (SAIMP) for the Institute of Ethiopian Studies Ethnographic Museum</p>
+                        <span class="grant-year">2025</span>
+                    </li>
+
+                    <li class="grant-item">
+                        <h3 class="grant-title">Postdoctoral Fellowship: Beyond Cartography</h3>
+                        <p class="grant-details">Herzog-Ernest-Stipendent, Erfurt University, Germany • April-July 2024</p>
+                        <span class="grant-year">2024</span>
+                    </li>
+                    <li class="grant-item">
+                        <h3 class="grant-title">PhD Research Fellowship: Indigenous territorial Knowledge</h3>
+                        <p class="grant-details">Herzog-Ernest-Stipendent • February-June 2022</p>
+                        <span class="grant-year">2022</span>
+                    </li>
+                    <li class="grant-item">
+                        <h3 class="grant-title">PhD Research Fellowship: Keela-system</h3>
+                        <p class="grant-details">EU-funded SLAFNET project, Hamburg University • November 2019</p>
+                        <span class="grant-year">2019</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Publications -->
+        <section class="section" id="publications">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Publications</h2>
+                    <p class="section-subtitle">Research outputs and scholarly works</p>
+                </div>
+                <div class="tabs">
+                    <div class="tab active" data-tab="articles">Journal Articles</div>
+                    <div class="tab" data-tab="monographs">Monographs</div>
+                    <div class="tab" data-tab="proceedings">Proceedings</div>
+                </div>
+
+                <div class="tab-content active" id="articles">
+                    <ul class="pubs-list">
+                        <li class="pub-item">
+                            <h3 class="pub-title">The keela-system as a defensive strategy against slave raiding in the kingdom of Dawuro, Southwest Ethiopia (c. sixteenth to nineteenth c.)</h3>
+                            <p class="pub-details">Aethiopica International Journal of Ethiopian and Eritrean Studies (accepted for publication)</p>
+                            <span class="pub-year">2024</span>
+                        </li>
+                        <li class="pub-item">
+                            <h3 class="pub-title">Contested development intervention in the Great Dawuro Walls (kati Halala Keela) heritage sites, Omo Valley, Ethiopia</h3>
+                            <p class="pub-details">Zena Lissan journal of Academy of Ethiopian language and culture, 32(2), 1-33</p>
+                            <span class="pub-year">2023</span>
+                        </li>
+                        <li class="pub-item">
+                            <h3 class="pub-title">Defensive Walls under Threat: Examining the Status of the Great Medieval Defensive Walls of Dawuro People in Southern Ethiopia</h3>
+                            <p class="pub-details">Journal for Studies in Management and Planning, 01(09), 61-82</p>
+                            <span class="pub-year">2015</span>
+                        </li>
+                        <li class="pub-item">
+                            <h3 class="pub-title">The Origin, significance and Physical condition of the Great Medieval Defensive Walls of Dawuro/kati Halala keela, Southwest Ethiopia</h3>
+                            <p class="pub-details">ERJSSH, 1(1), 17-39</p>
+                            <span class="pub-year">2014</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="tab-content" id="monographs">
+                    <ul class="pubs-list">
+                        <li class="pub-item">
+                            <h3 class="pub-title">የዳዉሮ ምርምር ጽሑፎች መድብል: ባህል፤ቅርስ፤ ልማት እና ማህበረተሰብ ተሳትፎ</h3>
+                            <p class="pub-details">The Collection of Research work on Dawuro: culture, heritage, development and community participation. ብዙዎረቅ �ማተሚያ, አዲስ አበባ</p>
+                            <span class="pub-year">2020</span>
+                        </li>
+                        <li class="pub-item">
+                            <h3 class="pub-title">Dinka- the worlds' longest cultural music instrument of Dawuro</h3>
+                            <p class="pub-details">Beranina Selam printing press Addis Ababa, 2015</p>
+                            <span class="pub-year">2015</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="tab-content" id="proceedings">
+                    <ul class="pubs-list">
+                        <li class="pub-item">
+                            <h3 class="pub-title">Ethnographic Art and Its Social Accounts: 'Manchala' Making and 'Occupational Groups' in Dawuro, Southwest Ethiopia</h3>
+                            <p class="pub-details">Proceeding to 20th international conference of Ethiopian Studies</p>
+                            <span class="pub-year">2019</span>
+                        </li>
+                        <li class="pub-item">
+                            <h3 class="pub-title">Dinka, the Woodwind-Ensemble Musical Instruments with the Longest Woodwind in the World, Dawuro Southwest Ethiopia</h3>
+                            <p class="pub-details">10th international conference of Ethiopian Art and Architecture</p>
+                            <span class="pub-year">2017</span>
+                        </li>
+                        <li class="pub-item">
+                            <h3 class="pub-title">The Great Medieval Defensive Walls of Dawuro/Kati Halala Keela, in southern Ethiopia</h3>
+                            <p class="pub-details">Proceeding of the 1st National Symposium of the Indigenous Studies Conference, Dilla University</p>
+                            <span class="pub-year">2015</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conferences & Panels -->
+        <section class="section" id="conferences">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Conferences & Panels</h2>
+                    <p class="section-subtitle">Academic presentations and participation</p>
+                </div>
+                <ul class="conferences-list">
+                    <li class="conference-item">
+                    <h3 class="conference-title">Panel Organizer: "The Renovation of Ethiopian Cultural Heritage in Post-War Regime: Trends and Prospects"</h3>
+                    <p class="conference-details">22 ICES, Hawassa</p>
+                    <span class="conference-year">2025</span>
+                </li>
+
+                <li class="conference-item">
+                    <h3 class="conference-title">Panel Organizer: "Succession and Innovation of Cultural Music, Dance, and Related Indigenous Knowledge for the Future of Ethiopia"</h3>
+                    <p class="conference-details">22 ICES, Hawassa</p>
+                    <span class="conference-year">2025</span>
+                </li>
+
+                <li class="conference-item">
+                    <h3 class="conference-title">Panel Organizer: "Revisiting Studies in Making of Enset Culture before 20th Century"</h3>
+                    <p class="conference-details">22 ICES, Hawassa</p>
+                    <span class="conference-year">2025</span>
+                </li>
+
+                    <li class="conference-item">
+                        <h3 class="conference-title">Panel Organizer: "Contestations and Alliances between the state and Local Communities over Land"</h3>
+                        <p class="conference-details">Association for African Studies in Italy (AASI), VII Biennial Conference, University of Messina</p>
+                        <span class="conference-year">2024</span>
+                    </li>
+                    <li class="conference-item">
+                        <h3 class="conference-title">Paper Presentation: "Mapping the Great Dawuro Walls/Kati Halala Keela with GIS"</h3>
+                        <p class="conference-details">21st International Conference of Ethiopian Studies, Addis Ababa</p>
+                        <span class="conference-year">2022</span>
+                    </li>
+                    <li class="conference-item">
+                        <h3 class="conference-title">Paper Presentation: "Assessing Potentials of Cultural Music for Koyisha Tourism Destination"</h3>
+                        <p class="conference-details">21st International Conference of Ethiopian Studies, Addis Ababa</p>
+                        <span class="conference-year">2022</span>
+                    </li>
+                    <li class="conference-item">
+                        <h3 class="conference-title">Paper Presentation: Cartographic Sources and Territorial Transformations of Ethiopia</h3>
+                        <p class="conference-details">Colloque Franco-Allemand ANR-DFG, Paris</p>
+                        <span class="conference-year">2022</span>
+                    </li>
+                    <li class="conference-item">
+                        <h3 class="conference-title">Panel Organizer: "Cultural Music, Instruments, Dance, and Related Indigenous Knowledge in Present-day Ethiopian Tourism"</h3>
+                        <p class="conference-details">21st International Conference of Ethiopian Studies, Addis Ababa</p>
+                        <span class="conference-year">2022</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h4>Dr. Admasu Abebe</h4>
+                    <p>Preserving culture and enabling community-driven development through research, policy and practice.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="Portfolio.html">Portfolio</a></li>
+                        <li><a href="Competence.html">Competence</a></li>
+                        <li><a href="Connections.html">Connections</a></li>
+                        <li><a href="Publicity.html">Publicity</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>admasu.abebe143@gmail.com<br>+251 930 708 91</p>
+                    <div class="social-links">
+              <a href="https://www.linkedin.com/in/dr-admasu-abebe-229538260?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BlNlTM2%2FsSHWHWsHbM0iWXw%3D%3D" class="social-link" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://t.me/+251913070891" class="social-link" aria-label="telegram">
+                <i class="fab fa-telegram"></i>
+              </a>
+              <a href="https://www.researchgate.net/profile/Admasu-Haile" class="social-link" aria-label="ResearchGate">
+                <i class="fab fa-researchgate"></i>
+              </a>
+              <a href="https://wa.me/251913070891?text=Hello" class="social-link" aria-label="whatsapp" target="_blank">
+              <i class="fab fa-whatsapp"></i>
+              </a>
+
+              </a>
+            </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Dr. Admasu Abebe — All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const menuToggle = document.getElementById('menuToggle');
+            const navMenu = document.getElementById('nav-menu');
+            
+            menuToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                menuToggle.innerHTML = navMenu.classList.contains('active') ? 
+                    '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            });
+            
+            // Close menu when clicking on links
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                });
+            });
+            
+            // Back to top button
+            window.addEventListener('scroll', function() {
+                const backToTop = document.getElementById('backToTop');
+                if (window.scrollY > 400) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            });
+            
+            // Tab functionality for publications
+            const tabs = document.querySelectorAll('.tab');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const target = tab.dataset.tab;
+                    
+                    // Remove active class from all tabs and contents
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+                    
+                    // Add active class to clicked tab and corresponding content
+                    tab.classList.add('active');
+                    document.getElementById(target).classList.add('active');
+                });
+            });
+
+            // Animation for elements on scroll
+            const animatedElements = document.querySelectorAll('.timeline-item, .interest-card, .position-card, .grant-item, .pub-item, .conference-item');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            animatedElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>

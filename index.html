@@ -1,0 +1,1542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Admasu Abebe — Cultural Heritage & Anthropology</title>
+  <meta name="description" content="Dr. Admasu Abebe — Social anthropologist researching cultural heritage, indigenous knowledge and community-driven development.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='transparent'/%3E%3Ctext x='50' y='70' font-size='90' fill='white' text-anchor='middle' font-family='Arial, sans-serif'%3EA%3C/text%3E%3C/svg%3E">
+  <style>
+    /* CSS Variables */
+    :root {
+      --primary: #07112a;
+      --secondary: #007C91;
+      --accent: #FFB81C;
+      --light: #f6f8fb;
+      --white: #ffffff;
+      --gray: #6b7280;
+      --light-gray: #e5e7eb;
+      --radius: 12px;
+      --shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+      --transition: all 0.3s ease;
+    }
+
+    /* Reset & Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: var(--primary);
+      background-color: var(--light);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+    }
+
+    h3 {
+      font-size: 1.75rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      position: relative;
+      padding-bottom: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius);
+      font-weight: 600;
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background-color: var(--accent);
+      color: var(--primary);
+    }
+
+    .btn-primary:hover {
+      background-color: #e6a500;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      border: 2px solid var(--light-gray);
+      color: var(--primary);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+       margin-bottom: 0;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .brand-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .brand-text h1 {
+      font-size: 1.25rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .brand-text p {
+      font-size: 0.8rem;
+      color: var(--gray);
+      margin-bottom: 0;
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-link {
+      font-weight: 600;
+      padding: 0.5rem 0;
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--accent);
+      transition: var(--transition);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 1rem 0;
+      position: relative;
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background-color: rgba(0, 124, 145, 0.1);
+      color: var(--secondary);
+      font-weight: 600;
+      font-size: 0.8rem;
+      border-radius: 50px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-size: 3rem;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-description {
+      font-size: 1.1rem;
+      color: var(--gray);
+      margin-bottom: 2rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .expertise-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .expertise-tag {
+      padding: 0.5rem 1rem;
+      background-color: rgba(0, 124, 145, 0.08);
+      color: var(--secondary);
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .hero-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(246, 248, 251, 0.9) 100%);
+      border-radius: var(--radius);
+      padding: 2rem;
+      background-color: rgba(255, 255, 255, 0.52);
+      backdrop-filter: blur(70px);
+      margin-left: 1rem;
+      height: 500px;
+      width: 520px;
+
+    }
+
+    .profile {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .profile-img {
+      width: 280px;
+      height: 390px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .profile-info h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    .profile-info p {
+      color: var(--gray);
+      margin-bottom: 0.75rem;
+    }
+
+    .profile-tags {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .profile-tag {
+      padding: 0.35rem 0.75rem;
+      background-color: rgba(0, 124, 145, 0.08);
+      color: var(--secondary);
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .card-actions {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    /* Gallery Section */
+    .gallery-section {
+      padding: 3rem 0;
+      background-color: var(--white);
+    }
+
+    .gallery-container {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .gallery-slideshow {
+      position: relative;
+      height: 500px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .slide.active {
+      opacity: 1;
+    }
+
+    .slide-content {
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+      color: white;
+      padding: 2rem;
+      width: 100%;
+    }
+
+    .slide-nav {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      z-index: 10;
+    }
+
+    .slide-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .slide-dot.active {
+      background-color: var(--accent);
+      transform: scale(1.2);
+    }
+
+    .slide-controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 1rem;
+      transform: translateY(-50%);
+      z-index: 10;
+    }
+
+    .slide-btn {
+      background-color: rgba(255, 255, 255, 0.8);
+      color: var(--primary);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .slide-btn:hover {
+      background-color: var(--accent);
+    }
+
+    /* Sections */
+    .section {
+      padding: 5rem 0;
+    }
+
+    .section-header {
+       display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+    }
+
+    .section-subtitle {
+      color: var(--gray);
+      font-size: 0.95rem;
+    }
+
+    /* Projects Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background-color: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .project-image {
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .project-content {
+      padding: 1.5rem;
+    }
+
+    .project-meta {
+      display: flex;
+      justify-content: space-between;
+      color: var(--gray);
+      font-size: 0.85rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .project-description {
+      color: var(--gray);
+      margin-bottom: 1.5rem;
+    }
+
+    /* Publications */
+    .publications-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .publication-item {
+      display: flex;
+      background-color: var(--white);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .publication-content {
+      flex: 1;
+    }
+
+    .publication-title {
+      margin-bottom: 0.5rem;
+    }
+
+    .publication-authors {
+      color: var(--gray);
+      font-size: 0.9rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .publication-description {
+      color: var(--gray);
+    }
+
+    .publication-action {
+      display: flex;
+      align-items: flex-start;
+      padding-left: 1.5rem;
+    }
+
+    /* About Section */
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 3rem;
+    }
+
+    .about-text p {
+      color: var(--gray);
+      margin-bottom: 1.5rem;
+    }
+
+    .facts-card {
+      background-color: var(--white);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .facts-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .fact-item strong {
+      color: var(--primary);
+    }
+
+    .fact-item {
+      color: var(--gray);
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--light-gray);
+    }
+
+    .fact-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    /* Testimonials Section */
+    .testimonials-section {
+      background-color: var(--white);
+    }
+
+    .testimonials-container {
+      position: relative;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .testimonial-card {
+      background-color: var(--light);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    .testimonial-text {
+      margin-bottom: 1.5rem;
+      font-style: italic;
+      color: var(--gray);
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .testimonial-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    .testimonial-info h4 {
+      margin-bottom: 0.25rem;
+    }
+
+    .testimonial-info p {
+      font-size: 0.9rem;
+      color: var(--gray);
+      margin-bottom: 0;
+    }
+
+    .testimonial-quote {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      font-size: 3rem;
+      color: rgba(0, 124, 145, 0.1);
+    }
+
+    /* Contact Section */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 350px;
+      gap: 3rem;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .form-label {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .form-input,
+    .form-textarea {
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--light-gray);
+      border-radius: var(--radius);
+      font-family: inherit;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .form-input:focus,
+    .form-textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(255, 184, 28, 0.2);
+    }
+
+    .form-textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .contact-info {
+      background-color: var(--white);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-details {
+      margin-bottom: 2rem;
+    }
+
+    .contact-details p {
+      color: var(--gray);
+      margin-bottom: 1rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius);
+      background-color: var(--light);
+      color: var(--primary);
+      transition: var(--transition);
+    }
+
+    .social-link:hover {
+      background-color: var(--accent);
+      color: var(--primary);
+    }
+
+    .map-container {
+      height: 250px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    #map {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, #07112a 0%, #0a2a44 100%);
+      color: white;
+      padding: 4rem 0 2rem;
+      border-top-left-radius: var(--radius);
+      border-top-right-radius: var(--radius);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-brand h4 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .footer-links h4 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .footer-links ul {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+
+    .footer-contact h4 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate {
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      
+      .contact-grid,
+      .about-content,
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      
+      .projects-grid,
+      .testimonials-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      }
+      
+      .gallery-slideshow {
+        height: 400px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        flex-direction: column;
+        background-color: var(--white);
+        width: 100%;
+        padding: 2rem;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        transition: var(--transition);
+        z-index: 99;
+      }
+      
+      .nav-menu.active {
+        left: 0;
+      }
+      
+      .mobile-toggle {
+        display: block;
+      }
+      
+      .hero-title {
+        font-size: 2.25rem;
+      }
+      
+      .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .profile {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .profile-img {
+        margin: 0 auto;
+      }
+      
+      .card-actions {
+        justify-content: center;
+      }
+      
+      .publication-item {
+        flex-direction: column;
+      }
+      
+      .publication-action {
+        padding-left: 0;
+        padding-top: 1.5rem;
+        justify-content: center;
+      }
+      
+      .gallery-slideshow {
+        height: 350px;
+      }
+      
+      .slide-content {
+        padding: 1.5rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .container {
+        padding: 0 1rem;
+      }
+      
+      .section {
+        padding: 3rem 0;
+      }
+      
+      .hero {
+        padding: 3rem 0;
+      }
+      
+      .hero-title {
+        font-size: 2rem;
+      }
+      
+      .projects-grid,
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .gallery-slideshow {
+        height: 300px;
+      }
+      
+      .slide-btn {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="#" class="brand">
+          <div class="brand-img">
+            <img src="photo_1.jpg" alt="Dr. Admasu Abebe">
+          </div>
+          <div class="brand-text">
+            <h1>Dr. Admasu Abebe</h1>
+            <p>Social Anthropologist • Cultural Heritage</p>
+          </div>
+        </a>
+        
+        <ul class="nav-menu">
+         <li><a href="index.html">Home</a></li>
+          <li><a href="Scholarship.html">Scholarship</a></li>
+          <li><a href="Portfolio.html">Portfolio</a></li>
+          <li><a href="Competence.html">Competence</a></li>
+          <li><a href="Connections.html">Connections</a></li>
+          <li><a href="Publicity.html">Publicity</a></li>
+          <li><b><a href="Store.html" style="color: #06697b;">Store</a></b></li>
+        </ul>
+        
+        <div class="nav-actions">
+          <a href="Admasu-CV.pdf" class="btn btn-outline" target="_blank" rel="noopener">
+            <i class="fas fa-download"></i> CV
+          </a>
+          <button class="mobile-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <span class="hero-badge">British Council | Cultural Protection Fund</span>
+            <h2 class="hero-title">Exploring culture & heritage through practical anthropology.</h2>
+            <p class="hero-description">Assistant Professor with +10 years of experience researching cultural heritage (Dawuro), indigenous knowledge systems, GIS mapping and participatory development. Manager of Dessie Museum renovation project and active publisher.</p>
+            
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary">View Projects</a>
+              <a href="#publications" class="btn btn-outline">Read Publications</a>
+              <a href="competence.html#gallery" class="btn btn-outline">Gallery!</a>
+            </div>
+            
+            <div>
+              <p><small>Areas of expertise</small></p>
+              <div class="expertise-tags">
+                <span class="expertise-tag">Cultural Studies</span>
+                <span class="expertise-tag">GIS Mapping</span>
+                <span class="expertise-tag">Impact Assessment</span>
+                <span class="expertise-tag">Heritage Policy</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="hero-card animate">
+            <div class="profile">
+              <div class="profile-img">
+                <img src="5897581605055220023.jpg" alt="Dr. Admasu Abebe">
+              </div>
+              <div class="profile-info">
+                <h3>Dr. Admasu Abebe</h3>
+                <p>Assistant Professor — Social Anthropology</p>
+                <div class="profile-tags" style="display: flex; flex-direction: column;">
+                  <span class="profile-tag">Dessie Museum</span>
+                  <span class="profile-tag">Dawuro Research</span>
+            <div class="card-actions">
+              <a href="#connect" class="btn btn-primary">Get in touch</a>
+            </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Major Works & Research</h2>
+          <p class="section-subtitle">Visual showcase of key projects and fieldwork</p>
+        </div>
+        
+        <div class="gallery-container">
+          <div class="gallery-slideshow">
+            <div class="slide active" style="background-image: url('https://github.com/jdxau/Admasu-Abebe/blob/main/halala.JPG?raw=true')">
+              <div class="slide-content">
+                <h3>Dawuro Heritage Preservation</h3>
+                <p>Participatory mapping and community awareness programs to protect the Great Dawuro Walls and oral histories.</p>
+              </div>
+            </div>
+            <div class="slide" style="background-image: url('https://github.com/jdxau/Admasu-Abebe/blob/main/dessie.jpg?raw=true')">
+              <div class="slide-content">
+                <h3>Dessie Museum Renovation Project</h3>
+                <p>Managing the Cultural Protection Fund project to renovate Dessie Museum and safeguard collections.</p>
+              </div>
+            </div>
+            <div class="slide" style="background-image: url('https://github.com/jdxau/Admasu-Abebe/blob/main/dinka2.JPG?raw=true')">
+              <div class="slide-content">
+                <h3>Dinka Music Instrument Research</h3>
+                <p>Documentation of traditional instruments and promotion of cultural music for heritage tourism.</p>
+              </div>
+            </div>
+            <div class="slide" style="background-image: url('https://github.com/jdxau/Admasu-Abebe/blob/main/forest(7).JPG?raw=true')">
+              <div class="slide-content">
+                <h3>Ethnographic Fieldwork</h3>
+                <p>Extensive research across Ethiopia documenting indigenous knowledge and cultural practices.</p>
+              </div>
+            </div>
+            
+            <div class="slide-controls">
+              <div class="slide-btn prev-btn">
+                <i class="fas fa-chevron-left"></i>
+              </div>
+              <div class="slide-btn next-btn">
+                <i class="fas fa-chevron-right"></i>
+              </div>
+            </div>
+            
+            <div class="slide-nav">
+              <div class="slide-dot active" data-slide="0"></div>
+              <div class="slide-dot" data-slide="1"></div>
+              <div class="slide-dot" data-slide="2"></div>
+              <div class="slide-dot" data-slide="3"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Featured Projects</h2>
+          <p class="section-subtitle">Selected community & heritage work</p>
+        </div>
+        
+        <div class="projects-grid">
+          <article class="project-card animate">
+            <div class="project-image" style="background-image: url('https://www.eht.et/wp-content/uploads/2025/01/photo_2025-01-09_17-45-29.jpg')"></div>
+            <div class="project-content">
+              <div class="project-meta">
+                <span>2023–2025</span>
+                <span>British Council — CPF</span>
+              </div>
+              <h3>Dessie Museum Renovation</h3>
+              <p class="project-description">Managing the Cultural Protection Fund project to renovate Dessie Museum and safeguard collections.</p>
+            
+            </div>
+          </article>
+          
+          <article class="project-card animate">
+            <div class="project-image" style="background-image: url('https://z-p3-scontent.fadd1-1.fna.fbcdn.net/v/t1.6435-9/49252330_1157658597732742_229899660800557056_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=yVc_-uFQrvwQ7kNvwFL84Ez&_nc_oc=AdlawaUM8Up1MeAUNrOCoXJvfTWWpWYqQTmUdSqqyCywBu8oPtc9I0zdX_HG8-4vl9Q&_nc_zt=23&_nc_ht=z-p3-scontent.fadd1-1.fna&_nc_gid=b2M07-onQT-vwvXP_6gMow&oh=00_AfYqx2fI1G3o8y5kNK-I-anPUN2YQq-P1x7DYUKMw25i3Q&oe=68FFE525')"></div>
+            <div class="project-content">
+              <div class="project-meta">
+                <span>Community-based</span>
+                <span>12 sites</span>
+              </div>
+              <h3>Dawuro Heritage Preservation</h3>
+              <p class="project-description">Participatory mapping and community awareness programs to protect the Great Dawuro Walls and oral histories.</p>
+             
+            </div>
+          </article>
+          
+          <article class="project-card animate">
+            <div class="project-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Dawro_dinka.png/960px-Dawro_dinka.png?20250510182232')"></div>
+            <div class="project-content">
+              <div class="project-meta">
+                <span>Fieldwork</span>
+                <span>TV features</span>
+              </div>
+              <h3>Dinka Music Instrument Research</h3>
+              <p class="project-description">Documentation of traditional instruments and promotion of cultural music for heritage tourism.</p>
+              
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title"  style="display: inline-block; vertical-align: middle;" >Publications</h2>
+        
+          <a href="Store.html" class="btn btn-outline" style="margin-left: 1rem; display: inline-flex; align-items: center; gap: 0.5rem; vertical-align: middle; color: black; background-color: royalblue;">
+        Store
+        <i class="fas fa-arrow-right"></i>
+      </a>
+
+      <p class="section-subtitle" style="width: 100%;">Peer-reviewed work & outputs</p>
+        </div>
+        
+        <div class="publications-list">
+          <div class="publication-item animate">
+            <div class="publication-content">
+              <h3 class="publication-title">History, Heritage and Developmental Modernity in Dawuro</h3>
+              <p class="publication-authors">Admasu Abebe — Journal of Cultural Heritage (2022)</p>
+              <p class="publication-description">A deep ethnographic analysis of the Great Dawuro Walls and contested heritage narratives in Southwest Ethiopia.</p>
+            </div>
+        
+          </div>
+          
+          <div class="publication-item animate">
+            <div class="publication-content">
+              <h3 class="publication-title">Indigenous knowledge & heritage tourism policy</h3>
+              <p class="publication-authors">Admasu Abebe — Development Policy Review (2021)</p>
+              <p class="publication-description">Policy recommendations that link indigenous systems and inclusive tourism-driven development.</p>
+            </div>
+          
+          </div>
+
+          <div class="publication-item animate">
+            <div class="publication-content">
+              <h3 class="publication-title">The keela-system as a defensive strategy against slave raiding in the kingdom of Dawuro</h3>
+              <p class="publication-authors">Admasu Abebe, Taddesse and Getachew — Aethiopica International Journal (2024)</p>
+              <p class="publication-description">Analysis of defensive strategies in Southwest Ethiopia from the sixteenth to nineteenth centuries.</p>
+            </div>
+        
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title">About</h2>
+        
+        <div class="about-content">
+          <div class="about-text">
+            <p class="animate">I am an Assistant Professor of Social Anthropology at Addis Ababa Science and Technology University with 15+ years of experience in research, teaching, and community engagement. My work centers on cultural studies, indigenous knowledge systems, GIS mapping, heritage tourism policy, and environmental/social impact assessments.</p>
+            <p class="animate">I hold a PhD from Addis Ababa University; my dissertation on the Great Dawuro Walls gained international recognition. I also completed a Postdoctoral Fellowship at the Transcultural Research Center, Erfurt University, Germany, researching "Beyond Cartography: Revisiting Antiono d'Abbadie's Studies in Making Enset Culture."</p>
+            <p class="animate">My roles include Project Manager for the British Council’s Cultural Protection Fund at Dessie Museum, qualitative researcher for the National Democratic Institute, and consultant on environmental and social impact assessments. I have published extensively on Dawuro heritage, defensive walls, and indigenous knowledge systems.</p>
+            <p class="animate">I am dedicated to preserving cultural heritage and advancing community-driven development through research, policy, and practical interventions. My work has been featured on BBC Amharic, EBS TV, and other national media, underscoring the role of cultural preservation in Ethiopia.</p>
+          </div>
+          
+          <aside class="facts-card animate">
+            <h4>Quick facts</h4>
+            <div class="facts-list">
+              <div class="fact-item">
+                <strong>Current:</strong> Addis Ababa Science and Technology University (Assistant Professor)
+              </div>
+              <div class="fact-item">
+                <strong>ORCID:</strong> 0000-0002-3794-2865
+              </div>
+              <div class="fact-item">
+                <strong>Education:</strong> PhD Social Anthropology (AAU), Postdoc (Erfurt), MA Cultutal Studies (AAU), BA History (Jimma University)
+              </div>
+              <div class="fact-item">
+                <strong>Research Focus:</strong> Cultural Heritage and Tourism Development, Museum, Indigenous Knowledge, Musicology, GIS Mapping, Tourism Policy
+              </div>
+              <div class="fact-item">
+                <strong>Contact:</strong> admasu.abebe143@gmail.com
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section testimonials-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Testimonials</h2>
+          <p class="section-subtitle">What colleagues and partners say</p>
+        </div>
+        
+        <div class="testimonials-grid">
+          <div class="testimonial-card animate">
+            <div class="testimonial-quote">
+              <i class="fas fa-quote-right"></i>
+            </div>
+            <p class="testimonial-text">"I know Mr. Admasu as a devoted and humble expert of his subject… Mr. Admasu is contributing a fascinating study on the keella system."</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">
+                <img src="https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg" alt="Colleague">
+              </div>
+              <div class="testimonial-info">
+                <h4>Dr. Alexander Meckelburg</h4>
+                <p>Postdoctoral Fellow, Department of History, University College London (UCL)</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial-card animate">
+            <div class="testimonial-quote">
+              <i class="fas fa-quote-right"></i>
+            </div>
+            <p class="testimonial-text">"As project manager for the Dessie Museum renovation, Dr. Admasu has demonstrated exceptional leadership skills and deep knowledge of cultural heritage preservation. His commitment to community engagement is particularly noteworthy."</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">
+                <img src="https://images.pexels.com/photos/2169434/pexels-photo-2169434.jpeg" alt="Colleague">
+              </div>
+              <div class="testimonial-info">
+                <h4>Meron Tekle</h4>
+                <p>British Council Cultural Protection Fund</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial-card animate">
+            <div class="testimonial-quote">
+              <i class="fas fa-quote-right"></i>
+            </div>
+            <p class="testimonial-text">"Dr. Admasu's ethnographic research on Dinka music instruments has not only documented an important cultural tradition but has also created opportunities for cultural tourism and economic development in the Dawuro region."</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">
+                <img src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg" alt="Colleague">
+              </div>
+              <div class="testimonial-info">
+                <h4>Teklu Abebe</h4>
+                <p>Director, Ethiopian Heritage Trust</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="connect" class="section">
+      <div class="container">
+        <h2 class="section-title">Connect</h2>
+        
+        <div class="contact-grid">
+          <form class="contact-form animate" id="contactForm">
+            <div class="form-group">
+              <label for="name" class="form-label">Your name</label>
+              <input type="text" id="name" class="form-input" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" id="email" class="form-input" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="subject" class="form-label">Subject</label>
+              <input type="text" id="subject" class="form-input" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="message" class="form-label">Message</label>
+              <textarea id="message" class="form-textarea" required></textarea>
+            </div>
+            
+            <div class="form-group">
+              <button id="send" type="submit" class="btn btn-primary">Send message</button>
+              <p><small>Or email directly: <a href="mailto:admasu.abebe143@gmail.com">admasu.abebe143@gmail.com</a></small></p>
+            </div>
+            
+            <div id="contactResult"></div>
+          </form>
+          
+          <div class="contact-info animate">
+            <h4>Contact details</h4>
+            <div class="contact-details">
+              <p><strong>Email:</strong> admasu.abebe143@gmail.com<br>
+              <strong>Alt:</strong> haile.admasu@uni-erfurt.de</p>
+              <p><strong>Phone:</strong> +25193070891 • +49 1521 5134806</p>
+              <p><strong>Address:</strong> Addis Ababa, Lemi kura sub city woreda 02</p>
+            </div>
+            
+            <div class="social-links">
+              <a href="https://www.linkedin.com/in/dr-admasu-abebe-229538260?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BlNlTM2%2FsSHWHWsHbM0iWXw%3D%3D" class="social-link" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://t.me/+251913070891" class="social-link" aria-label="telegram">
+                <i class="fab fa-telegram"></i>
+              </a>
+              <a href="https://www.researchgate.net/profile/Admasu-Haile" class="social-link" aria-label="ResearchGate">
+                <i class="fab fa-researchgate"></i>
+              </a>
+              <a href="https://wa.me/251913070891?text=Hello" class="social-link" aria-label="whatsapp" target="_blank">
+              <i class="fab fa-whatsapp"></i>
+              </a>
+
+              </a>
+            </div>
+            
+            <h4>Location</h4>
+            <div class="map-container">
+              <div id="map"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>Dr. Admasu Abebe</h4>
+          <p>Preserving culture and enabling community-driven development through research, policy and practice.</p>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Quick links</h4>
+          <ul>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="Store.html">Publications</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#connect">Connect</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p>admasu.abebe143@gmail.com<br>+251 930 708 91</p>
+          <p>Addis Ababa, Lemi kura sub city woreda 02</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Dr. Admasu Abebe — All rights reserved</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Mobile menu toggle
+      const menuToggle = document.getElementById('menuToggle');
+      const navMenu = document.querySelector('.nav-menu');
+      
+      menuToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+        menuToggle.innerHTML = navMenu.classList.contains('active') ? 
+          '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+      });
+      
+      // Close menu when clicking on links
+      const navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('active');
+          menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        });
+      });
+      
+      // Animation on scroll
+      const animateElements = document.querySelectorAll('.animate');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      animateElements.forEach(element => {
+        element.style.opacity = 0;
+        element.style.transition = 'opacity 0.6s ease-in-out';
+        observer.observe(element);
+      });
+      
+      // Slideshow functionality
+      const slides = document.querySelectorAll('.slide');
+      const dots = document.querySelectorAll('.slide-dot');
+      const prevBtn = document.querySelector('.prev-btn');
+      const nextBtn = document.querySelector('.next-btn');
+      let currentSlide = 0;
+      let slideInterval;
+      
+      function showSlide(n) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        currentSlide = (n + slides.length) % slides.length;
+        
+        slides[currentSlide].classList.add('active');
+        dots[currentSlide].classList.add('active');
+      }
+      
+      function nextSlide() {
+        showSlide(currentSlide + 1);
+      }
+      
+      function prevSlide() {
+        showSlide(currentSlide - 1);
+      }
+      
+      function startSlideshow() {
+        slideInterval = setInterval(nextSlide, 5000);
+      }
+      
+      function stopSlideshow() {
+        clearInterval(slideInterval);
+      }
+      
+      // Event listeners for slideshow controls
+      nextBtn.addEventListener('click', () => {
+        stopSlideshow();
+        nextSlide();
+        startSlideshow();
+      });
+      
+      prevBtn.addEventListener('click', () => {
+        stopSlideshow();
+        prevSlide();
+        startSlideshow();
+      });
+      
+      dots.forEach(dot => {
+        dot.addEventListener('click', function() {
+          stopSlideshow();
+          showSlide(parseInt(this.getAttribute('data-slide')));
+          startSlideshow();
+        });
+      });
+      
+      // Initialize slideshow
+      startSlideshow();
+      
+      // Initialize map
+      const map = L.map('map').setView([9.0054, 38.7636], 12); // Addis Ababa coordinates
+      
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+      
+      L.marker([9.0054, 38.7636])
+        .addTo(map)
+        .bindPopup('Addis Ababa, Ethiopia<br>Dr. Admasu Abebe')
+        .openPopup();
+      
+      // Enhanced contact form handling
+      const contactForm = document.getElementById('contactForm');
+      const contactResult = document.getElementById('contactResult');
+      
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const subject = document.getElementById('subject').value.trim();
+        const message = document.getElementById('message').value.trim();
+        
+        if (!name || !email || !subject || !message) {
+          showResult('Please fill all fields.', 'error');
+          return;
+        }
+        
+        if (!isValidEmail(email)) {
+          showResult('Please enter a valid email address.', 'error');
+          return;
+        }
+        
+        // Simulate form submission (in a real implementation, you would use a service like Formspree or EmailJS)
+        showResult('Sending your message...', 'sending');
+        
+        setTimeout(() => {
+          const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0ASubject: ${subject}%0D%0A%0D%0AMessage:%0D%0A${message}`;
+          window.location.href = `mailto:admasu.abebe143@gmail.com?subject=Website Contact: ${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+          
+          showResult('Message sent successfully! Redirecting to email client...', 'success');
+          
+          setTimeout(() => {
+            contactResult.textContent = '';
+            contactForm.reset();
+          }, 4000);
+        }, 1500);
+      });
+      
+      function showResult(text, type) {
+        contactResult.textContent = text;
+        contactResult.className = '';
+        
+        switch(type) {
+          case 'error':
+            contactResult.style.color = '#e53e3e';
+            break;
+          case 'success':
+            contactResult.style.color = 'var(--secondary)';
+            break;
+          case 'sending':
+            contactResult.style.color = 'var(--gray)';
+            break;
+        }
+      }
+      
+      function isValidEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+      }
+      
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+      
+      // Keyboard shortcut for contact form
+      document.addEventListener('keydown', function(e) {
+        if (e.key === '/' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+          e.preventDefault();
+          document.getElementById('message').focus();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

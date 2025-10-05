@@ -1,0 +1,1880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Admasu Abebe — Academic Publications</title>
+  <meta name="description" content="Purchase academic publications by Dr. Admasu Abebe on Dawuro cultural heritage, anthropology, and Ethiopian studies.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='transparent'/%3E%3Ctext x='50' y='70' font-size='90' fill='white' text-anchor='middle' font-family='Arial, sans-serif'%3EA%3C/text%3E%3C/svg%3E">
+  <style>
+    /* CSS Variables */
+    :root {
+      --primary: #0a1930;
+      --secondary: #1a365d;
+      --accent: #d4af37;
+      --light: #f8f9fa;
+      --white: #ffffff;
+      --gray: #6b7280;
+      --light-gray: #e5e7eb;
+      --radius: 12px;
+      --shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+      --transition: all 0.3s ease;
+    }
+    /* Reset & Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: var(--primary);
+      background-color: var(--light);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+    }
+
+    h3 {
+      font-size: 1.75rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      position: relative;
+      padding-bottom: 1rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius);
+      font-weight: 600;
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background-color: var(--accent);
+      color: var(--primary);
+    }
+
+    .btn-primary:hover {
+      background-color: #c19a2c;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      border: 2px solid var(--light-gray);
+      color: var(--primary);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      background-color: rgba(255, 255, 255, 0.52);
+      backdrop-filter: blur(70px);
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .brand-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .brand-text h1 {
+      font-size: 1.25rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .brand-text p {
+      font-size: 0.8rem;
+      color: var(--gray);
+      margin-bottom: 0;
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-link {
+      font-weight: 600;
+      padding: 0.5rem 0;
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--accent);
+      transition: var(--transition);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Cart & Wishlist Icons */
+    .nav-icon {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: var(--light);
+      color: var(--primary);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .nav-icon:hover {
+      background-color: var(--accent);
+    }
+
+    .cart-count, .wishlist-count {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background-color: var(--accent);
+      color: var(--primary);
+      font-size: 0.7rem;
+      font-weight: 700;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Store Header */
+    .store-header {
+      padding: 3rem 0 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .store-header p {
+      color: var(--gray);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* SVG Animation Background */
+    .svg-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.03;
+    }
+
+    /* Filter Controls */
+    .filter-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+      background: var(--white);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .search-box {
+      position: relative;
+      flex: 1;
+      max-width: 400px;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 0.75rem 1rem 0.75rem 3rem;
+      border: 1px solid var(--light-gray);
+      border-radius: var(--radius);
+      font-family: inherit;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .search-input:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gray);
+    }
+
+    .sort-filter {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .filter-select {
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--light-gray);
+      border-radius: var(--radius);
+      font-family: inherit;
+      font-size: 0.9rem;
+      background-color: var(--white);
+      cursor: pointer;
+    }
+
+    /* Publications Grid */
+    .publications-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .publication-card {
+      background-color: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .publication-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .publication-image {
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .wishlist-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+      z-index: 2;
+    }
+
+    .wishlist-btn:hover {
+      background-color: var(--white);
+      transform: scale(1.1);
+    }
+
+    .wishlist-btn.active {
+      color: #e53e3e;
+    }
+
+    .publication-content {
+      padding: 1.5rem;
+    }
+
+    .publication-meta {
+      display: flex;
+      justify-content: space-between;
+      color: var(--gray);
+      font-size: 0.85rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .publication-title {
+      margin-bottom: 0.75rem;
+      font-size: 1.25rem;
+      line-height: 1.3;
+    }
+
+    .publication-authors {
+      color: var(--gray);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .publication-description {
+      color: var(--gray);
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .publication-price {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+    }
+
+    .price-tag {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--primary);
+    }
+
+    .price-conversion {
+      font-size: 0.8rem;
+      color: var(--gray);
+    }
+
+    .publication-actions {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    /* Expanded Payment View */
+    .payment-expanded {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+    }
+
+    .payment-expanded.active {
+      max-height: 1000px;
+    }
+
+    .payment-content {
+      padding: 1.5rem;
+      border-top: 1px solid var(--light-gray);
+    }
+
+    .payment-methods {
+      margin-bottom: 1.5rem;
+    }
+
+    .payment-title {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    .payment-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .payment-option {
+      border: 2px solid var(--light-gray);
+      border-radius: var(--radius);
+      padding: 1rem;
+      cursor: pointer;
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .payment-option:hover {
+      border-color: var(--accent);
+    }
+
+    .payment-option.selected {
+      border-color: var(--accent);
+      background-color: rgba(212, 175, 55, 0.1);
+    }
+
+    .payment-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--secondary);
+    }
+
+    .payment-name {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .payment-desc {
+      font-size: 0.8rem;
+      color: var(--gray);
+    }
+
+    .payment-details {
+      background-color: var(--light);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .payment-info {
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+    }
+    
+    .copy-instruction {
+      background-color: rgba(212, 175, 55, 0.1);
+      padding: 0.75rem;
+      border-radius: var(--radius);
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      border-left: 3px solid var(--accent);
+    }
+
+    .copy-box {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .copy-text {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      background-color: var(--white);
+      border: 1px solid var(--light-gray);
+      border-radius: var(--radius);
+      font-family: inherit;
+      font-size: 0.9rem;
+    }
+
+    .copy-btn {
+      padding: 0.75rem;
+      background-color: var(--secondary);
+      color: var(--white);
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .copy-btn:hover {
+      background-color: #152a4d;
+    }
+
+    .messaging-options {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .message-btn {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem;
+      border-radius: var(--radius);
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .whatsapp-btn {
+      background-color: #25D366;
+      color: white;
+    }
+
+    .whatsapp-btn:hover {
+      background-color: #128C7E;
+    }
+
+    .telegram-btn {
+      background-color: #0088cc;
+      color: white;
+    }
+
+    .telegram-btn:hover {
+      background-color: #006699;
+    }
+
+    /* Cart Sidebar */
+    .cart-sidebar, .wishlist-sidebar {
+      position: fixed;
+      top: 0;
+      right: -400px;
+      width: 100%;
+      max-width: 400px;
+      height: 100vh;
+      background-color: var(--white);
+      box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      transition: right 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cart-sidebar.active, .wishlist-sidebar.active {
+      right: 0;
+    }
+
+    .cart-header, .wishlist-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem;
+      border-bottom: 1px solid var(--light-gray);
+    }
+
+    .cart-title, .wishlist-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    .close-cart, .close-wishlist {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--gray);
+    }
+
+    .cart-items, .wishlist-items {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1.5rem;
+    }
+
+    .cart-item, .wishlist-item {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--light-gray);
+      position: relative;
+    }
+
+    .cart-item:last-child, .wishlist-item:last-child {
+      border-bottom: none;
+    }
+
+    .cart-item-image, .wishlist-item-image {
+      width: 80px;
+      height: 100px;
+      border-radius: 8px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .cart-item-details, .wishlist-item-details {
+      flex: 1;
+    }
+
+    .cart-item-title, .wishlist-item-title {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      font-size: 0.95rem;
+    }
+
+    .cart-item-price, .wishlist-item-price {
+      color: var(--secondary);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .cart-item-actions, .wishlist-item-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .remove-item {
+      color: #e53e3e;
+      background: none;
+      border: none;
+      cursor: pointer;
+      position: absolute;
+      top: 1rem;
+      right: 0;
+    }
+
+    .cart-footer, .wishlist-footer {
+      padding: 1.5rem;
+      border-top: 1px solid var(--light-gray);
+    }
+
+    .cart-total, .wishlist-total {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .checkout-btn {
+      width: 100%;
+      padding: 1rem;
+      background-color: var(--accent);
+      color: var(--primary);
+      border: none;
+      border-radius: var(--radius);
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .checkout-btn:hover {
+      background-color: #c19a2c;
+    }
+
+    .empty-cart, .empty-wishlist {
+      text-align: center;
+      padding: 2rem;
+      color: var(--gray);
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, #0a1930 0%, #1a365d 100%);
+      color: white;
+      padding: 4rem 0 2rem;
+      border-top-left-radius: var(--radius);
+      border-top-right-radius: var(--radius);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-brand h4 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .footer-links h4 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .footer-links ul {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+
+    .footer-contact h4 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate {
+      animation: fadeInUp 0.6s ease forwards;
+    }
+    
+    /* SVG Animation */
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+    
+    .floating-svg {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    /* Publication type colors */
+    .publication-card-books {
+      border-top: 4px solid #1a365d;
+    }
+
+    .publication-card-articles {
+      border-top: 4px solid #d4af37;
+    }
+
+    .publication-card-proceedings {
+      border-top: 4px solid #0a1930;
+    }
+
+    /* Button styles for remove from cart */
+    .btn-remove {
+      background-color: #e53e3e;
+      color: white;
+    }
+
+    .btn-remove:hover {
+      background-color: #c53030;
+      color: white;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .publications-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      }
+      
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        flex-direction: column;
+        background-color: var(--white);
+        width: 100%;
+        padding: 2rem;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        transition: var(--transition);
+        z-index: 99;
+      }
+      
+      .nav-menu.active {
+        left: 0;
+      }
+      
+      .mobile-toggle {
+        display: block;
+      }
+      
+      .filter-controls {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      
+      .search-box {
+        max-width: 100%;
+      }
+      
+      .sort-filter {
+        width: 100%;
+        justify-content: space-between;
+      }
+      
+      .filter-select {
+        flex: 1;
+      }
+      
+      .payment-options {
+        grid-template-columns: 1fr;
+      }
+      
+      .cart-sidebar, .wishlist-sidebar {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .container {
+        padding: 0 1rem;
+      }
+      
+      .publications-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .publication-actions {
+        flex-direction: column;
+      }
+      
+      .messaging-options {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="brand">
+          <div class="brand-img">
+            <img src="photo_1.jpg" alt="Dr. Admasu Abebe">
+          </div>
+          <div class="brand-text">
+            <h1>Dr. Admasu Abebe</h1>
+            <p>Social Anthropologist • Cultural Heritage</p>
+          </div>
+        </a>
+        
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Scholarship.html">Scholarship</a></li>
+          <li><a href="Portfolio.html">Portfolio</a></li>
+          <li><a href="Competence.html">Competence</a></li>
+          <li><a href="Connections.html">Connections</a></li>
+          <li><a href="Publicity.html">Publicity</a></li>
+          <li><b><a href="Store.html" style="color: #06697b;">Store</a></b></li>
+        </ul>
+        
+        <div class="nav-actions">
+          <div class="nav-icon" id="wishlistToggle">
+            <i class="fas fa-heart"></i>
+            <span class="wishlist-count" id="wishlistCount">0</span>
+          </div>
+          <div class="nav-icon" id="cartToggle">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count" id="cartCount">0</span>
+          </div>
+          <a href="Admasu-CV.pdf" class="" target="_blank" rel="noopener">
+            
+          </a>
+          <button class="mobile-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Store Header -->
+    <section class="store-header">
+      <div class="container">
+        <svg class="svg-background" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <defs>
+            <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+              <path d="M 10 0 L 0 0 0 10" fill="none" stroke="var(--accent)" stroke-width="0.5"/>
+            </pattern>
+          </defs>
+          <rect width="100" height="100" fill="url(#grid)" />
+        </svg>
+        <h2 class="section-title">Academic Publications</h2>
+        <p>Explore and purchase Dr. Admasu Abebe's research publications on Dawuro cultural heritage, anthropology, and Ethiopian studies.</p>
+      </div>
+    </section>
+
+    <!-- Filter Controls -->
+    <section class="container">
+      <div class="filter-controls">
+        <div class="search-box">
+          <i class="fas fa-search search-icon"></i>
+          <input type="text" class="search-input" id="searchInput" placeholder="Search publications...">
+        </div>
+        
+        <div class="sort-filter">
+          <select class="filter-select" id="sortSelect">
+            <option value="newest">Newest First</option>
+            <option value="oldest">Oldest First</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="price-low">Price: Low to High</option>
+          </select>
+          
+          <select class="filter-select" id="filterSelect">
+            <option value="all">All Publications</option>
+            <option value="books">Books</option>
+            <option value="articles">Journal Articles</option>
+            <option value="proceedings">Conference Proceedings</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- Publications Grid -->
+    <section class="container">
+      <div class="publications-grid" id="publicationsGrid">
+        <!-- Publications will be dynamically inserted here -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3 class="cart-title">Your Cart</h3>
+      <button class="close-cart" id="closeCart">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    
+    <div class="cart-items" id="cartItems">
+      <!-- Cart items will be dynamically inserted here -->
+    </div>
+    
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span id="cartTotal">ETB 0.00 / $0.00</span>
+      </div>
+      <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <!-- Wishlist Sidebar -->
+  <div class="wishlist-sidebar" id="wishlistSidebar">
+    <div class="wishlist-header">
+      <h3 class="wishlist-title">Your Wishlist</h3>
+      <button class="close-wishlist" id="closeWishlist">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    
+    <div class="wishlist-items" id="wishlistItems">
+      <!-- Wishlist items will be dynamically inserted here -->
+    </div>
+    
+    <div class="wishlist-footer">
+      <button class="checkout-btn" id="wishlistToCart">Add All to Cart</button>
+    </div>
+  </div>
+
+  <!-- Overlay -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Footer -->
+  <footer>
+    <svg class="svg-background" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <defs>
+        <pattern id="waves" x="0" y="0" width="0.1" height="0.1">
+          <path d="M 0,50 C 30,30 70,70 100,50 L 100,100 L 0,100 Z" fill="var(--accent)" opacity="0.1"/>
+        </pattern>
+      </defs>
+      <rect width="100" height="100" fill="url(#waves)" />
+    </svg>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>Dr. Admasu Abebe</h4>
+          <p>Preserving culture and enabling community-driven development through research, policy and practice.</p>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Quick links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="Scholarship.html">Scholarship</a></li>
+            <li><a href="Portfolio.html">Portfolio</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p>admasu.abebe143@gmail.com<br>+251 930 708 91</p>
+          <p>Addis Ababa, Lemi kura sub city woreda 02</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Dr. Admasu Abebe — All rights reserved</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  /* store-fix-with-logos.js
+   Complete replacement JavaScript for Store.html
+   -- Adds small inline SVG logos to payment methods (telebirr, awash, cbe, paypal, usdt)
+   -- Keeps the same fixes for "Remove from Cart" behavior, wishlist, cart persistence, etc.
+   Paste this into a separate .js file and include it instead of the inline <script>.
+*/
+
+document.addEventListener('DOMContentLoaded', () => {
+  // -------------------------------
+  // Cached DOM nodes
+  // -------------------------------
+  const publicationsGrid = document.getElementById('publicationsGrid');
+  const cartToggle = document.getElementById('cartToggle');
+  const cartSidebar = document.getElementById('cartSidebar');
+  const closeCart = document.getElementById('closeCart');
+  const wishlistToggle = document.getElementById('wishlistToggle');
+  const wishlistSidebar = document.getElementById('wishlistSidebar');
+  const closeWishlist = document.getElementById('closeWishlist');
+  const overlay = document.getElementById('overlay');
+  const cartCountEl = document.getElementById('cartCount');
+  const wishlistCountEl = document.getElementById('wishlistCount');
+  const cartItemsEl = document.getElementById('cartItems');
+  const wishlistItemsEl = document.getElementById('wishlistItems');
+  const cartTotalEl = document.getElementById('cartTotal');
+  const checkoutBtn = document.getElementById('checkoutBtn');
+  const wishlistToCartBtn = document.getElementById('wishlistToCart');
+  const searchInput = document.getElementById('searchInput');
+  const sortSelect = document.getElementById('sortSelect');
+  const filterSelect = document.getElementById('filterSelect');
+  const menuToggle = document.getElementById('menuToggle');
+  const navMenu = document.querySelector('.nav-menu');
+
+  // -------------------------------
+  // Small inline SVG logos generator
+  // -------------------------------
+  function getPaymentSVG(method) {
+    // simple square/circle logos with initials; keeps file self-contained
+    switch (method) {
+      case 'telebirr':
+        return `<svg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'>
+          <rect rx='6' width='36' height='36' fill='#FF6A00'/>
+          <text x='50%' y='55%' font-size='14' font-family='Arial, sans-serif' fill='#fff' font-weight='700' text-anchor='middle'>TB</text>
+        </svg>`;
+      case 'awash':
+        return `<svg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'>
+          <circle cx='18' cy='18' r='18' fill='#0056A4'/>
+          <path d='M9 22 Q18 10 27 22' stroke='#fff' stroke-width='2.4' fill='none' stroke-linecap='round'/>
+        </svg>`;
+      case 'cbe':
+        return `<svg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'>
+          <rect rx='6' width='36' height='36' fill='#1E90FF'/>
+          <text x='50%' y='55%' font-size='12' font-family='Arial, sans-serif' fill='#fff' font-weight='700' text-anchor='middle'>CBE</text>
+        </svg>`;
+      case 'paypal':
+        return `<svg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'>
+          <rect rx='6' width='36' height='36' fill='#003087'/>
+          <path d='M12 24 L16 12 H24 L20 24 Z' fill='#009cde'/>
+        </svg>`;
+      case 'usdt':
+        return `<svg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'>
+          <circle cx='18' cy='18' r='18' fill='#20C997'/>
+          <text x='50%' y='55%' font-size='14' font-family='Arial, sans-serif' fill='#fff' font-weight='700' text-anchor='middle'>T</text>
+        </svg>`;
+      default:
+        return `<svg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'>
+          <rect rx='6' width='36' height='36' fill='#ccc'/>
+          <text x='50%' y='55%' font-size='12' font-family='Arial, sans-serif' fill='#333' text-anchor='middle'>?</text>
+        </svg>`;
+    }
+  }
+
+  function svgToDataUrl(svg) {
+    return 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
+  }
+
+  function paymentLogoImg(method, altText = '') {
+    const svg = getPaymentSVG(method);
+    const url = svgToDataUrl(svg);
+    return `<img class="payment-logo" src="${url}" alt="${altText || method} logo" style="width:36px;height:36px;display:inline-block;vertical-align:middle;margin-right:8px;border-radius:6px;">`;
+  }
+
+  // -------------------------------
+  // Data (publications)
+  // -------------------------------
+  const publications = [
+    { id: 1, title: "History, Heritage and Developmental Modernity in Dawuro", authors: "Admasu Abebe", year: 2023, type: "books", description: "PhD dissertation exploring the Great Dawuro Walls (Kati Halala Keela) as a contested heritage site in Southwest Ethiopia, examining the intersection of history, heritage preservation, and developmental modernity.", priceETB: 850, priceUSD: 15, image: "https://4kwallpapers.com/images/walls/thumbs_2t/792.jpg", featured: true },
+    { id: 2, title: "The keela-system as a defensive strategy against slave raiding in the kingdom of Dawuro", authors: "Admasu Abebe, Taddesse and Getachew", year: 2024, type: "articles", description: "Analysis of defensive strategies in the kingdom of Dawuro, Southwest Ethiopia from the sixteenth to nineteenth centuries, published in Aethiopica International Journal.", priceETB: 450, priceUSD: 8, image: "https://4kwallpapers.com/images/walls/thumbs_2t/795.jpg", featured: true },
+    { id: 3, title: "Contested development intervention in the Great Dawuro Walls heritage sites", authors: "Admasu Abebe, Taddesse and Getachew", year: 2023, type: "articles", description: "Examination of development interventions at the Great Dawuro Walls (kati Halala Keela) heritage sites in Omo Valley, Ethiopia, published in Zena Lissan journal.", priceETB: 400, priceUSD: 7, image: "https://4kwallpapers.com/images/walls/thumbs_2t/797.png", featured: false },
+    { id: 4, title: "Defensive Walls under Threat: Examining the Status of the Great Medieval Defensive Walls of Dawuro", authors: "Admasu Abebe and Zelalem", year: 2015, type: "articles", description: "Assessment of the physical condition and preservation challenges facing the Great Medieval Defensive Walls of Dawuro People in Southern Ethiopia.", priceETB: 350, priceUSD: 6, image: "https://4kwallpapers.com/images/walls/thumbs_2t/799.jpg", featured: false },
+    { id: 5, title: "The Origin, significance and Physical condition of the Great Medieval Defensive Walls of Dawuro", authors: "Admasu Abebe", year: 2014, type: "articles", description: "Comprehensive study of the historical origins, cultural significance, and current physical condition of the kati Halala keela defensive walls in Southwest Ethiopia.", priceETB: 300, priceUSD: 5, image: "https://4kwallpapers.com/images/walls/thumbs_2t/1549.jpg", featured: false },
+    { id: 6, title: "The Collection of Research work on Dawuro: culture, heritage, development and community participation", authors: "Admasu, Mitiku and Mathews", year: 2020, type: "books", description: "Anthology of research works focusing on Dawuro culture, heritage preservation, development initiatives, and community participation strategies.", priceETB: 750, priceUSD: 13, image: "https://4kwallpapers.com/images/walls/thumbs_2t/1549.jpg", featured: true },
+    { id: 7, title: "Dinka: the worlds' longest cultural music instrument of Dawuro", authors: "Admasu Abebe", year: 2015, type: "books", description: "Ethnographic study of Dinka, the woodwind-ensemble musical instruments with the longest woodwind in the world, from Dawuro, Southwest Ethiopia.", priceETB: 600, priceUSD: 10, image: "https://4kwallpapers.com/images/walls/thumbs_2t/2942.jpg   ", featured: true },
+    { id: 8, title: "The Great Medieval Defensive Walls of Dawuro/Kati Halala Keela, in southern Ethiopia", authors: "Admasu Abebe", year: 2015, type: "proceedings", description: "Conference proceedings from the 1st National Symposium of the Indigenous Studies Conference discussing the significance of Dawuro's defensive walls.", priceETB: 250, priceUSD: 4.5, image: "https://4kwallpapers.com/images/walls/thumbs_2t/2909.jpg", featured: false },
+    { id: 9, title: "Ethnographic Art and Its Social Accounts: 'Manchala' Making and 'Occupational Groups' in Dawuro", authors: "Admasu Abebe", year: 2019, type: "proceedings", description: "Analysis of ethnographic art forms and their social significance, focusing on 'Manchala' making and occupational groups in Dawuro society.", priceETB: 280, priceUSD: 5, image: "https://4kwallpapers.com/images/walls/thumbs_2t/2918.jpg", featured: false },
+    { id: 10, title: "Indigenous Governance Systems of the Dawuro People", authors: "Admasu Abebe", year: 2018, type: "books", description: "Detailed examination of the traditional governance systems, conflict resolution mechanisms, and social organization of the Dawuro people.", priceETB: 650, priceUSD: 11, image: "https://4kwallpapers.com/images/walls/thumbs_2t/2910.jpg", featured: true },
+    { id: 11, title: "Oral Traditions and Historical Narratives in Dawuro", authors: "Admasu Abebe", year: 2017, type: "articles", description: "Analysis of oral traditions as historical sources and their role in preserving cultural memory and identity among the Dawuro people.", priceETB: 320, priceUSD: 5.5, image: "https://4kwallpapers.com/images/walls/thumbs_2t/2927.jpg", featured: false },
+    { id: 12, title: "Rituals and Ceremonies: The Cultural Fabric of Dawuro Society", authors: "Admasu Abebe", year: 2016, type: "books", description: "Comprehensive study of traditional rituals, ceremonies, and their socio-cultural significance in Dawuro community life.", priceETB: 700, priceUSD: 12, image: "https://4kwallpapers.com/images/walls/thumbs_2t/2934.jpg", featured: true }
+  ];
+
+  // -------------------------------
+  // State: cart & wishlist (persisted)
+  // -------------------------------
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+  // Expose to window for debugging (optional)
+  window.cart = cart;
+  window.wishlist = wishlist;
+
+  // -------------------------------
+  // UI update helpers
+  // -------------------------------
+  function updateCartCount() {
+    cartCountEl.textContent = cart.length;
+  }
+  function updateWishlistCount() {
+    wishlistCountEl.textContent = wishlist.length;
+  }
+
+  function saveCart() {
+    localStorage.setItem('cart', JSON.stringify(cart));
+    window.cart = cart;
+  }
+  function saveWishlist() {
+    localStorage.setItem('wishlist', JSON.stringify(wishlist));
+    window.wishlist = wishlist;
+  }
+
+  // -------------------------------
+  // Render functions
+  // -------------------------------
+  function renderPublications(pubs) {
+    publicationsGrid.innerHTML = '';
+    pubs.forEach(pub => {
+      const isInCart = cart.some(item => Number(item.id) === Number(pub.id));
+      const isInWishlist = wishlist.some(item => Number(item.id) === Number(pub.id));
+
+      const pubCard = document.createElement('article');
+      pubCard.className = `publication-card publication-card-${pub.type} animate`;
+      pubCard.innerHTML = `
+        <div class="publication-image" style="background-image: url('${pub.image}')">
+          <div class="wishlist-btn ${isInWishlist ? 'active' : ''}" data-id="${pub.id}" title="Add to wishlist">
+            <i class="${isInWishlist ? 'fas' : 'far'} fa-heart"></i>
+          </div>
+        </div>
+        <div class="publication-content">
+          <div class="publication-meta">
+            <span>${pub.year}</span>
+            <span>${pub.type}</span>
+          </div>
+          <h3 class="publication-title">${pub.title}</h3>
+          <p class="publication-authors">${pub.authors}</p>
+          <p class="publication-description">${pub.description}</p>
+          <div class="publication-price">
+            <span class="price-tag">ETB ${pub.priceETB.toFixed(2)}</span>
+            <span class="price-conversion">≈ $${pub.priceUSD.toFixed(2)} USD</span>
+          </div>
+          <div class="publication-actions">
+            <button class="btn ${isInCart ? 'btn-remove-cart' : 'btn-outline add-to-cart'}" data-id="${pub.id}">
+              <i class="fas ${isInCart ? 'fa-cart-minus' : 'fa-cart-plus'}"></i>
+              ${isInCart ? 'Remove from Cart' : 'Add to Cart'}
+            </button>
+            <button class="btn btn-primary buy-now" data-id="${pub.id}">
+              <i class="fas fa-shopping-bag"></i> Buy Now
+            </button>
+          </div>
+        </div>
+        <div class="payment-expanded" id="payment-${pub.id}">
+          <div class="payment-content">
+            <div class="payment-methods">
+              <h4 class="payment-title">Select Payment Method</h4>
+              <div class="payment-options" data-pub="${pub.id}">
+                <div class="payment-option" data-method="telebirr">${paymentLogoImg('telebirr','Telebirr')}<div class="payment-name">Telebirr</div></div>
+                <div class="payment-option" data-method="paypal">${paymentLogoImg('paypal','PayPal')}<div class="payment-name">PayPal</div></div>
+                <div class="payment-option" data-method="usdt">${paymentLogoImg('usdt','USDT')}<div class="payment-name">USDT</div></div>
+                <div class="payment-option" data-method="awash">${paymentLogoImg('awash','Awash Bank')}<div class="payment-name">Awash</div></div>
+                <div class="payment-option" data-method="cbe">${paymentLogoImg('cbe','CBE')}<div class="payment-name">CBE</div></div>
+              </div>
+            </div>
+            <div class="payment-details">
+              <p class="payment-info" id="payment-info-${pub.id}">Please select a payment method to continue</p>
+             
+              <div class="copy-box">
+                <input type="text" class="copy-text" id="copy-text-${pub.id}" value="Select a payment method first" readonly>
+                <button class="copy-btn" data-copy="${pub.id}"><i class="fas fa-copy"></i> Copy</button>
+              </div>
+              <div class="messaging-options">
+                <a href="#" class="message-btn whatsapp-btn" id="whatsapp-${pub.id}" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <a href="#" class="message-btn telegram-btn" id="telegram-${pub.id}" target="https://t.me/Admasu_store_bot"><i class="fab fa-telegram"></i> Telegram</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+      publicationsGrid.appendChild(pubCard);
+    });
+
+    // Attach listeners for publication-level buttons
+    initPublicationListeners();
+    initPaymentOptionListeners(); // payment logos/options clickable
+  }
+
+  function renderCartItems() {
+    if (!cart || cart.length === 0) {
+      cartItemsEl.innerHTML = `
+        <div class="empty-cart">
+          <i class="fas fa-shopping-cart" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.3;"></i>
+          <p>Your cart is empty</p>
+        </div>
+      `;
+      cartTotalEl.textContent = 'ETB 0.00 / $0.00';
+      return;
+    }
+
+    let totalETB = 0;
+    let totalUSD = 0;
+    const fragment = document.createDocumentFragment();
+
+    cart.forEach(item => {
+      totalETB += Number(item.priceETB || 0);
+      totalUSD += Number(item.priceUSD || 0);
+
+      const div = document.createElement('div');
+      div.className = 'cart-item';
+      div.innerHTML = `
+        <div class="cart-item-image"><img src="${item.image}" alt="${item.title}"></div>
+        <div class="cart-item-details">
+          <h4 class="cart-item-title">${item.title}</h4>
+          <div class="cart-item-price">ETB ${Number(item.priceETB).toFixed(2)}</div>
+          <button class="btn btn-remove cart-remove-btn" data-id="${item.id}">
+            <i class="fas fa-trash"></i> Remove
+          </button>
+        </div>
+      `;
+      fragment.appendChild(div);
+    });
+
+    cartItemsEl.innerHTML = '';
+    cartItemsEl.appendChild(fragment);
+    cartTotalEl.textContent = `ETB ${totalETB.toFixed(2)} / $${totalUSD.toFixed(2)} USD`;
+  }
+
+  function renderWishlistItems() {
+    if (!wishlist || wishlist.length === 0) {
+      wishlistItemsEl.innerHTML = `
+        <div class="empty-wishlist">
+          <i class="fas fa-heart" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.3;"></i>
+          <p>Your wishlist is empty</p>
+        </div>
+      `;
+      return;
+    }
+
+    const fragment = document.createDocumentFragment();
+    wishlist.forEach(item => {
+      const div = document.createElement('div');
+      div.className = 'wishlist-item';
+      div.innerHTML = `
+        <div class="wishlist-item-image"><img src="${item.image}" alt="${item.title}"></div>
+        <div class="wishlist-item-details">
+          <h4 class="wishlist-item-title">${item.title}</h4>
+          <div class="wishlist-item-price">ETB ${Number(item.priceETB).toFixed(2)}</div>
+          <button class="btn btn-remove wishlist-remove-btn" data-id="${item.id}">
+            <i class="fas fa-trash"></i> Remove
+          </button>
+        </div>
+      `;
+      fragment.appendChild(div);
+    });
+
+    wishlistItemsEl.innerHTML = '';
+    wishlistItemsEl.appendChild(fragment);
+  }
+
+  // -------------------------------
+  // Actions: add/remove/cart management
+  // -------------------------------
+  function addToCart(id) {
+    id = Number(id);
+    const pub = publications.find(p => p.id === id);
+    if (!pub) return;
+    const exists = cart.some(i => Number(i.id) === id);
+    if (!exists) {
+      cart.push({ id: pub.id, title: pub.title, priceETB: pub.priceETB, priceUSD: pub.priceUSD, image: pub.image });
+      saveCart();
+      updateCartCount();
+      renderCartItems();
+      filterPublications();
+      alert(`${pub.title} added to cart!`);
+    } else {
+      alert(`${pub.title} is already in your cart.`);
+    }
+  }
+
+  function removeFromCartById(id) {
+    id = Number(id);
+    const exists = cart.some(i => Number(i.id) === id);
+    if (!exists) return;
+    cart = cart.filter(i => Number(i.id) !== id);
+    saveCart();
+    updateCartCount();
+    renderCartItems();
+    filterPublications();
+  }
+
+  function addToWishlist(id) {
+    id = Number(id);
+    const pub = publications.find(p => p.id === id);
+    if (!pub) return;
+    const exists = wishlist.some(i => Number(i.id) === id);
+    if (!exists) {
+      wishlist.push({ id: pub.id, title: pub.title, priceETB: pub.priceETB, priceUSD: pub.priceUSD, image: pub.image });
+      saveWishlist();
+      updateWishlistCount();
+      renderWishlistItems();
+      filterPublications();
+    }
+  }
+
+  function removeFromWishlistById(id) {
+    id = Number(id);
+    const exists = wishlist.some(i => Number(i.id) === id);
+    if (!exists) return;
+    wishlist = wishlist.filter(i => Number(i.id) !== id);
+    saveWishlist();
+    updateWishlistCount();
+    renderWishlistItems();
+    const wishlistBtn = document.querySelector(`.wishlist-btn[data-id="${id}"]`);
+    if (wishlistBtn) {
+      wishlistBtn.classList.remove('active');
+      const icon = wishlistBtn.querySelector('i');
+      if (icon) {
+        icon.classList.remove('fas');
+        icon.classList.add('far');
+      }
+    }
+  }
+
+  // -------------------------------
+  // Event listeners (delegation)
+  // -------------------------------
+  function initPublicationListeners() {
+    // Wishlist toggles
+    document.querySelectorAll('.wishlist-btn').forEach(btn => {
+      btn.removeEventListener('click', wishlistBtnHandler);
+      btn.addEventListener('click', wishlistBtnHandler);
+    });
+
+    // Add-to-cart and Remove-from-cart buttons in cards
+    document.querySelectorAll('.add-to-cart').forEach(btn => {
+      btn.removeEventListener('click', addToCartHandler);
+      btn.addEventListener('click', addToCartHandler);
+    });
+    document.querySelectorAll('.btn-remove-cart').forEach(btn => {
+      btn.removeEventListener('click', removeFromCartHandler);
+      btn.addEventListener('click', removeFromCartHandler);
+    });
+
+    // Buy now
+    document.querySelectorAll('.buy-now').forEach(btn => {
+      btn.removeEventListener('click', buyNowHandler);
+      btn.addEventListener('click', buyNowHandler);
+    });
+
+    // Copy buttons
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+      btn.removeEventListener('click', copyBtnHandler);
+      btn.addEventListener('click', copyBtnHandler);
+    });
+  }
+
+  // Handlers
+  function wishlistBtnHandler(e) {
+    const btn = e.currentTarget;
+    const id = Number(btn.dataset.id);
+    const icon = btn.querySelector('i');
+    if (!icon) return;
+    if (icon.classList.contains('far')) {
+      icon.classList.remove('far');
+      icon.classList.add('fas');
+      btn.classList.add('active');
+      addToWishlist(id);
+    } else {
+      icon.classList.remove('fas');
+      icon.classList.add('far');
+      btn.classList.remove('active');
+      removeFromWishlistById(id);
+    }
+  }
+
+  function addToCartHandler(e) {
+    const id = e.currentTarget.dataset.id;
+    addToCart(id);
+  }
+
+  function removeFromCartHandler(e) {
+    const id = e.currentTarget.dataset.id;
+    removeFromCartById(id);
+  }
+
+  function buyNowHandler(e) {
+    const id = Number(e.currentTarget.dataset.id);
+    singleItemCheckout(id);
+
+
+  }
+
+  function copyBtnHandler(e) {
+    const btn = e.currentTarget;
+    const pubId = btn.dataset.copy;
+    const copyTextEl = document.getElementById(`copy-text-${pubId}`);
+    if (!copyTextEl) return;
+    copyTextEl.select();
+    document.execCommand('copy');
+    const original = btn.innerHTML;
+    btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+    setTimeout(() => btn.innerHTML = original, 1500);
+  }
+
+  // Cart sidebar remove (delegated)
+  cartItemsEl.addEventListener('click', (ev) => {
+    const btn = ev.target.closest('.cart-remove-btn');
+    if (!btn) return;
+    const id = btn.dataset.id;
+    removeFromCartById(id);
+  });
+
+  // Wishlist sidebar remove (delegated)
+  wishlistItemsEl.addEventListener('click', (ev) => {
+    const btn = ev.target.closest('.wishlist-remove-btn');
+    if (!btn) return;
+    const id = btn.dataset.id;
+    removeFromWishlistById(id);
+  });
+
+  // Payment option interaction inside each publication's payment-expanded
+  function initPaymentOptionListeners() {
+    document.querySelectorAll('.payment-options').forEach(container => {
+      container.querySelectorAll('.payment-option').forEach(opt => {
+        opt.removeEventListener('click', publicationPaymentOptionHandler);
+        opt.addEventListener('click', publicationPaymentOptionHandler);
+      });
+    });
+  }
+
+  function publicationPaymentOptionHandler(e) {
+    const opt = e.currentTarget;
+    const method = opt.dataset.method;
+    const pubId = opt.closest('.payment-expanded')?.id?.split('-')?.pop();
+    if (!pubId) return;
+    const infoEl = document.getElementById(`payment-info-${pubId}`);
+    const copyInput = document.getElementById(`copy-text-${pubId}`);
+    const whatsappBtn = document.getElementById(`whatsapp-${pubId}`);
+    const telegramBtn = document.getElementById(`telegram-${pubId}`);
+    const pub = publications.find(p => Number(p.id) === Number(pubId));
+    const totalETB = pub ? Number(pub.priceETB||0) : 0;
+    const totalUSD = pub ? Number(pub.priceUSD||0) : 0;
+
+    let message = `Hello, I want to purchase "${pub.title}". Total: ETB ${totalETB.toFixed(2)} / $${totalUSD.toFixed(2)}. Payment method: `;
+    switch (method) {
+      case 'telebirr':
+        message += 'Telebirr.';
+        if (infoEl) infoEl.innerHTML = `Send <strong>ETB ${totalETB.toFixed(2)}</strong> to Telebirr account: <strong>+25193070891</strong>`;
+        break;
+      case 'paypal':
+        message += 'PayPal.';
+        if (infoEl) infoEl.innerHTML = `Send <strong>$${totalUSD.toFixed(2)} USD</strong> to PayPal: <strong>admasu.abebe143@gmail.com</strong>`;
+        break;
+      case 'usdt':
+        message += 'USDT (TRC20).';
+        if (infoEl) infoEl.innerHTML = `Send <strong>$${totalUSD.toFixed(2)} USD</strong> worth of USDT to TRC20 wallet: <strong>TXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</strong>`;
+        break;
+      case 'awash':
+        message += 'Awash Bank.';
+        if (infoEl) infoEl.innerHTML = `Transfer <strong>ETB ${totalETB.toFixed(2)}</strong> to Awash account: <strong>2000000000000</strong>`;
+        break;
+      case 'cbe':
+        message += 'CBE Bank.';
+        if (infoEl) infoEl.innerHTML = `Transfer <strong>ETB ${totalETB.toFixed(2)}</strong> to CBE account: <strong>1000000000000</strong>`;
+        break;
+    }
+
+    if (copyInput) copyInput.value = message;
+    if (whatsappBtn) whatsappBtn.href = `https://wa.me/25193070891?text=${encodeURIComponent(message)}`;
+    if (telegramBtn) telegramBtn.href = `https://t.me/your_telegram_bot?start=${encodeURIComponent(message)}`;
+  }
+
+  // -------------------------------
+  // Checkout & misc functions
+  // -------------------------------
+  function singleItemCheckout(id) {
+    const pub = publications.find(p => p.id === Number(id));
+    if (!pub) return;
+    openCheckoutModal([{
+      id: pub.id,
+      title: pub.title,
+      priceETB: pub.priceETB,
+      priceUSD: pub.priceUSD
+    }], true);
+  }
+
+  function openCheckoutModal(items, isSingleItem) {
+    const itemsList = items.map((it, i) => `${i + 1}. ${it.title}`).join('\n');
+    const totalETB = items.reduce((s, it) => s + Number(it.priceETB || 0), 0);
+    const totalUSD = items.reduce((s, it) => s + Number(it.priceUSD || 0), 0);
+
+    const checkoutSection = document.createElement('div');
+    checkoutSection.className = 'payment-expanded active';
+    checkoutSection.style.position = 'fixed';
+    checkoutSection.style.top = '50%';
+    checkoutSection.style.left = '50%';
+    checkoutSection.style.transform = 'translate(-50%, -50%)';
+    checkoutSection.style.width = '90%';
+    checkoutSection.style.maxWidth = '640px';
+    checkoutSection.style.zIndex = '1001';
+    checkoutSection.style.backgroundColor = 'white';
+    checkoutSection.style.borderRadius = '12px';
+    checkoutSection.style.padding = '1.25rem';
+    checkoutSection.style.maxHeight = '80vh';
+    checkoutSection.style.overflowY = 'auto';
+    checkoutSection.style.boxShadow = '0 10px 30px rgba(0,0,0,0.12)';
+
+    checkoutSection.innerHTML = `
+      <div class="payment-content">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
+          <h3 style="margin:0;">${isSingleItem ? 'Direct Purchase' : 'Checkout'}</h3>
+          <button id="closeCheckout" style="background:none;border:none;font-size:1.25rem;cursor:pointer;"><i class="fas fa-times"></i></button>
+        </div>
+        <div style="margin-bottom:1rem;">
+          <h4 style="margin:0 0 0.5rem 0;">Order Summary</h4>
+          <div style="background:#f8f9fa;padding:1rem;border-radius:8px;margin-top:0.25rem;">
+            ${items.map(it => `<div style="display:flex;justify-content:space-between;padding:0.25rem 0;"><div>${it.title}</div><div>ETB ${Number(it.priceETB).toFixed(2)}</div></div>`).join('')}
+          </div>
+          <div style="display:flex;justify-content:space-between;font-weight:bold;margin-top:0.75rem;">
+            <div>Total:</div><div>ETB ${totalETB.toFixed(2)} / $${totalUSD.toFixed(2)} USD</div>
+          </div>
+        </div>
+
+        <div class="payment-methods" style="margin-top:0.75rem;">
+          <h4 style="margin:0 0 0.5rem 0;">Select Payment Method</h4>
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:0.5rem;">
+            <button class="payment-option-modal" data-method="telebirr" style="display:flex;align-items:center;gap:8px;padding:0.5rem 0.75rem;border-radius:8px;border:1px solid #e6e6e6;cursor:pointer;">
+              ${paymentLogoImg('telebirr','Telebirr')} <span>Telebirr</span>
+            </button>
+            <button class="payment-option-modal" data-method="cbe" style="display:flex;align-items:center;gap:8px;padding:0.5rem 0.75rem;border-radius:8px;border:1px solid #e6e6e6;cursor:pointer;">
+              ${paymentLogoImg('cbe','CBE Bank')} <span>CBE</span>
+            </button>
+            <button class="payment-option-modal" data-method="awash" style="display:flex;align-items:center;gap:8px;padding:0.5rem 0.75rem;border-radius:8px;border:1px solid #e6e6e6;cursor:pointer;">
+              ${paymentLogoImg('awash','Awash Bank')} <span>Awash</span>
+            </button>
+            <button class="payment-option-modal" data-method="paypal" style="display:flex;align-items:center;gap:8px;padding:0.5rem 0.75rem;border-radius:8px;border:1px solid #e6e6e6;cursor:pointer;">
+              ${paymentLogoImg('paypal','PayPal')} <span>PayPal</span>
+            </button>
+            <button class="payment-option-modal" data-method="usdt" style="display:flex;align-items:center;gap:8px;padding:0.5rem 0.75rem;border-radius:8px;border:1px solid #e6e6e6;cursor:pointer;">
+              ${paymentLogoImg('usdt','USDT')} <span>USDT</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="payment-details" style="margin-top:1rem;">
+          <p id="checkout-payment-info">Please select a payment method</p>
+           <div class="copy-instruction">
+                  <i class="fas fa-info-circle"></i> Please copy this message and paste it into your Telegram or WhatsApp conversation with the seller.
+              </div>
+          <div style="display:flex;gap:0.5rem;margin-top:0.5rem;">
+            <input id="checkout-copy-text" class="copy-text" readonly value="Select a payment method first" style="flex:1;padding:0.5rem;border:1px solid #e5e7eb;border-radius:8px;">
+            <button id="checkout-copy-btn" class="copy-btn" style="padding:0.5rem 0.75rem;border-radius:8px;"><i class="fas fa-copy"></i> Copy</button>
+          </div>
+          <div style="display:flex;gap:0.5rem;margin-top:0.75rem;">
+            <a id="checkout-whatsapp" class="message-btn whatsapp-btn" href="#" target="_blank" style="text-decoration:none;padding:0.5rem 0.75rem;border-radius:8px;border:1px solid #e6e6e6;">WhatsApp</a>
+            <a id="checkout-telegram" class="message-btn telegram-btn" href="#" target="_blank" style="text-decoration:none;padding:0.5rem 0.75rem;border-radius:8px;border:1px solid #e6e6e6;">Telegram</a>
+          </div>
+        </div>
+      </div>
+    `;
+
+    document.body.appendChild(checkoutSection);
+    overlay.classList.add('active');
+
+    // Close
+    checkoutSection.querySelector('#closeCheckout').addEventListener('click', () => {
+      if (checkoutSection.parentElement) checkoutSection.remove();
+      overlay.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    });
+
+    // Payment method selection
+    checkoutSection.querySelectorAll('.payment-option-modal').forEach(opt => {
+      opt.addEventListener('click', () => {
+        const method = opt.dataset.method;
+        updateCheckoutPaymentInfo(method, itemsList, totalETB, totalUSD, checkoutSection);
+      });
+    });
+
+    // Copy
+    checkoutSection.querySelector('#checkout-copy-btn').addEventListener('click', () => {
+      const el = checkoutSection.querySelector('#checkout-copy-text');
+      el.select();
+      document.execCommand('copy');
+      const btn = checkoutSection.querySelector('#checkout-copy-btn');
+      const orig = btn.innerHTML;
+      btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+      setTimeout(() => btn.innerHTML = orig, 1200);
+    });
+  }
+
+  function updateCheckoutPaymentInfo(method, itemsList, totalETB, totalUSD, checkoutSection) {
+    const info = checkoutSection.querySelector('#checkout-payment-info');
+    const copyTextEl = checkoutSection.querySelector('#checkout-copy-text');
+    const whatsappLink = checkoutSection.querySelector('#checkout-whatsapp');
+    const telegramLink = checkoutSection.querySelector('#checkout-telegram');
+
+    let message = `Hello, I want to purchase the following publications:\n${itemsList}\nTotal: ETB ${totalETB.toFixed(2)} / $${totalUSD.toFixed(2)} USD. I want to pay using `;
+
+    switch (method) {
+      case 'telebirr':
+        message += 'Telebirr.';
+        info.innerHTML = `Send <strong>ETB ${totalETB.toFixed(2)}</strong> to Telebirr account: <strong>+25193070891</strong>`;
+        break;
+      case 'cbe':
+        message += 'CBE Bank.';
+        info.innerHTML = `Transfer <strong>ETB ${totalETB.toFixed(2)}</strong> to CBE account: <strong>1000000000000</strong>`;
+        break;
+      case 'awash':
+        message += 'Awash Bank.';
+        info.innerHTML = `Transfer <strong>ETB ${totalETB.toFixed(2)}</strong> to Awash account: <strong>2000000000000</strong>`;
+        break;
+      case 'paypal':
+        message += 'PayPal.';
+        info.innerHTML = `Send <strong>$${totalUSD.toFixed(2)} USD</strong> to PayPal: <strong>admasu.abebe143@gmail.com</strong>`;
+        break;
+      case 'usdt':
+        message += 'USDT (TRC20).';
+        info.innerHTML = `Send <strong>$${totalUSD.toFixed(2)} USD</strong> worth of USDT to TRC20 wallet: <strong>TXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</strong>`;
+        break;
+    }
+
+    copyTextEl.value = message;
+    const encoded = encodeURIComponent(message);
+    whatsappLink.href = `https://wa.me/25193070891?text=${encoded}`;
+    telegramLink.href = `https://t.me/your_telegram_bot?start=${encoded}`;
+  }
+
+  // -------------------------------
+  // Sidebar, overlay, menu controls
+  // -------------------------------
+  cartToggle && cartToggle.addEventListener('click', () => {
+    cartSidebar.classList.add('active');
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+  closeCart && closeCart.addEventListener('click', () => {
+    cartSidebar.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  });
+  wishlistToggle && wishlistToggle.addEventListener('click', () => {
+    wishlistSidebar.classList.add('active');
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+  closeWishlist && closeWishlist.addEventListener('click', () => {
+    wishlistSidebar.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  });
+  overlay.addEventListener('click', () => {
+    cartSidebar.classList.remove('active');
+    wishlistSidebar.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.style.overflow = 'auto';
+    document.querySelectorAll('.payment-expanded.active').forEach(el => el.classList.remove('active'));
+  });
+
+  menuToggle && menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    menuToggle.innerHTML = navMenu.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+  });
+
+  // Checkout button for full cart
+  checkoutBtn && checkoutBtn.addEventListener('click', () => {
+    if (cart.length === 0) {
+      alert('Your cart is empty!');
+      return;
+    }
+    cartSidebar.classList.remove('active');
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    openCheckoutModal(cart.map(i => ({ id: i.id, title: i.title, priceETB: i.priceETB, priceUSD: i.priceUSD })), false);
+  });
+
+  // Add all wishlist to cart
+  wishlistToCartBtn && wishlistToCartBtn.addEventListener('click', () => {
+    if (!wishlist || wishlist.length === 0) {
+      alert('Your wishlist is empty!');
+      return;
+    }
+    wishlist.forEach(item => {
+      if (!cart.some(ci => Number(ci.id) === Number(item.id))) {
+        cart.push(item);
+      }
+    });
+    saveCart();
+    updateCartCount();
+    renderCartItems();
+    filterPublications();
+    alert('All items from your wishlist have been added to your cart!');
+  });
+
+  // -------------------------------
+  // Search/Filter
+  // -------------------------------
+  function filterPublications() {
+    const searchTerm = (searchInput?.value || '').toLowerCase();
+    const sortBy = sortSelect?.value;
+    const filterBy = filterSelect?.value;
+
+    let filtered = publications.filter(pub => {
+      const matchesSearch = pub.title.toLowerCase().includes(searchTerm) ||
+                            pub.authors.toLowerCase().includes(searchTerm) ||
+                            pub.description.toLowerCase().includes(searchTerm);
+      const matchesFilter = !filterBy || filterBy === 'all' || pub.type === filterBy;
+      return matchesSearch && matchesFilter;
+    });
+
+    switch (sortBy) {
+      case 'newest': filtered.sort((a,b) => b.year - a.year); break;
+      case 'oldest': filtered.sort((a,b) => a.year - b.year); break;
+      case 'price-high': filtered.sort((a,b) => b.priceETB - a.priceETB); break;
+      case 'price-low': filtered.sort((a,b) => a.priceETB - b.priceETB); break;
+    }
+
+    renderPublications(filtered);
+  }
+
+  searchInput && searchInput.addEventListener('input', filterPublications);
+  sortSelect && sortSelect.addEventListener('change', filterPublications);
+  filterSelect && filterSelect.addEventListener('change', filterPublications);
+
+  // -------------------------------
+  // Initial UI setup
+  // -------------------------------
+  updateCartCount();
+  updateWishlistCount();
+  renderCartItems();
+  renderWishlistItems();
+  filterPublications(); // initial render of publications (calls renderPublications)
+
+  // -------------------------------
+  // Expose safe global functions (if external inline handlers still exist)
+  // -------------------------------
+  window._removeFromCart = (id) => removeFromCartById(id);
+  window._removeFromWishlist = (id) => removeFromWishlistById(id);
+  window._addToCart = (id) => addToCart(id);
+});
+
+  </script>
+</body>
+</html>
